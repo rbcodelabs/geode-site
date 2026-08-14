@@ -1,0 +1,59 @@
+---
+import FeatureCard from './FeatureCard.astro';
+
+// Curated from the README's "Features (v0.1)" list — the strongest,
+// most concrete features for a landing page grid. Sentences trimmed from
+// the README; no claims added beyond what it documents.
+const features = [
+  {
+    title: 'Vaults',
+    description: 'Open any folder as a vault. External edits are picked up live, no import step required.',
+  },
+  {
+    title: 'Editor',
+    description:
+      'CodeMirror 6 with markdown highlighting, [[wikilink]] autocomplete, Cmd/Ctrl+click to follow, autosave, and rename-updates-links.',
+  },
+  {
+    title: 'Reading view',
+    description:
+      'Callouts (13 types, foldable), embeds for notes/images/audio/video, highlights, tags, tables, task lists, and YAML properties.',
+  },
+  {
+    title: 'Knowledge graph plumbing',
+    description:
+      'Backlinks pane, outline, tag pane, unresolved-link styling, and link resolution by shortest path and alias.',
+  },
+  {
+    title: 'Search',
+    description: 'tag:, path:, and file: operators, quoted phrases, negation, and regex — right in the search bar.',
+  },
+  {
+    title: 'Workspace',
+    description: 'Tabs, split panes, pinned tabs, collapsible sidebars, and a status-bar word count.',
+  },
+  {
+    title: 'Command palette & quick switcher',
+    description: 'Cmd+P for commands, Cmd+O to jump between notes, Cmd+D for daily notes.',
+  },
+  {
+    title: 'Themes',
+    description: 'Dark and light themes driven by CSS variables, matching the same theming model as the original.',
+  },
+];
+---
+
+<section id="features" class="border-y border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface-alt))]/40">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Everything you need for a local-first vault</h2>
+      <p class="mt-4 text-[rgb(var(--color-text-muted))]">
+        The core loop works today: vaults, editing, wikilinks, backlinks, search, tags, and reading view.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {features.map((feature) => <FeatureCard title={feature.title} description={feature.description} />)}
+    </div>
+  </div>
+</section>

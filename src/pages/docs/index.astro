@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORY_ORDER, CATEGORY_LABELS, sortDocs } from '../../lib/docsCategories';
+
+const allDocs = sortDocs(await getCollection('docs'));
+
+const categories = CATEGORY_ORDER.map((category) => {
+  const items = allDocs.filter((d) => d.data.category === category);
+  return { category, label: CATEGORY_LABELS[category] ?? category, items, first: items[0] };
+}).filter((c) => c.items.length > 0);
+
+const title = 'Documentation — Geode';
+const description =
+  'Full documentation for Geode: overview and roadmap, the core app specification, plugins and the plugin API, file formats and platform behavior, and architecture decision records.';
+---
+
+<Layout title={title} description={description}>
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+    <div class="mx-auto max-w-2xl text-center">
+      <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Documentation</h1>
+      <p class="mt-4 text-[rgb(var(--color-text-muted))]">
+        Everything about Geode's target scope — from the implementation roadmap to the full plugin API surface and
+        the architecture decisions behind the app.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        categories.map((cat) => (
+          <div class="card p-6">
+            <h2 class="text-lg font-bold">
+              <a href={`/docs/${cat.first.id}/`} class="transition-colors hover:text-[rgb(var(--color-primary))]">
+                {cat.label}
+              </a>
+            </h2>
+            <p class="mt-2 text-sm leading-relaxed text-[rgb(var(--color-text-muted))]">{cat.first.data.description}</p>
+            <ul class="mt-4 space-y-1.5 border-t border-[rgb(var(--color-border))] pt-4 text-sm">
+              {cat.items.map((item) => (
+                <li>
+                  <a href={`/docs/${item.id}/`} class="text-[rgb(var(--color-text-muted))] transition-colors hover:text-[rgb(var(--color-primary))]">
+                    {item.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

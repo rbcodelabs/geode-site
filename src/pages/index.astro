@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ScreenshotShowcase from '../components/ScreenshotShowcase.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import InstallSteps from '../components/InstallSteps.astro';
+
+const title = 'Geode — a local-first Markdown knowledge base';
+const description =
+  'Geode is an open-source, local-first Markdown knowledge base — a clean-room clone of Obsidian. Vaults, a CodeMirror 6 editor, wikilinks, backlinks, search, and reading view, with your notes stored as plain Markdown files on disk.';
+---
+
+<Layout title={title} description={description}>
+  <Hero />
+  <ScreenshotShowcase />
+  <FeatureGrid />
+  <InstallSteps />
+</Layout>

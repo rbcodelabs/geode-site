@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { CATEGORY_ORDER, CATEGORY_LABELS } from '../lib/docsCategories';
+
+interface Props {
+  docs: CollectionEntry<'docs'>[];
+  currentId: string;
+}
+
+const { docs, currentId } = Astro.props;
+
+const grouped = CATEGORY_ORDER.map((category) => ({
+  category,
+  label: CATEGORY_LABELS[category] ?? category,
+  items: docs
+    .filter((d) => d.data.category === category)
+    .sort((a, b) => a.data.order - b.data.order),
+})).filter((group) => group.items.length > 0);
+---
+
+<aside class="mb-10 shrink-0 lg:mb-0 lg:w-60">
+  <nav class="space-y-6 lg:sticky lg:top-24" aria-label="Documentation">
+    {
+      grouped.map((group) => (
+        <div>
+          <h3 class="px-2 text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-text-muted))]">
+            {group.label}
+          </h3>
+          <ul class="mt-2 space-y-0.5">
+            {group.items.map((item) => (
+              <li>
+                <a
+                  href={`/docs/${item.id}/`}
+                  aria-current={item.id === currentId ? 'page' : undefined}
+                  class={
+                    'block rounded-md px-2 py-1.5 text-sm transition-colors ' +
+                    (item.id === currentId
+                      ? 'bg-[rgb(var(--color-primary))]/15 font-semibold text-[rgb(var(--color-text))]'
+                      : 'text-[rgb(var(--color-text-muted))] hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-text))]')
+                  }
+                >
+                  {item.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </nav>
+</aside>

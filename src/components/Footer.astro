@@ -1,0 +1,27 @@
+---
+const GITHUB_URL = 'https://github.com/rbcodelabs/geode';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-[rgb(var(--color-border))]">
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-[rgb(var(--color-text-muted))] sm:flex-row sm:px-6">
+    <div class="text-center sm:text-left">
+      <p class="font-semibold text-[rgb(var(--color-text))]">Geode</p>
+      <p class="mt-1">An open-source, local-first Markdown knowledge base.</p>
+    </div>
+
+    <div class="flex items-center gap-5">
+      <a href="/docs/" class="transition-colors hover:text-[rgb(var(--color-text))]">
+        Docs
+      </a>
+      <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-[rgb(var(--color-text))]">
+        GitHub
+      </a>
+      <a href="/changelog/" class="transition-colors hover:text-[rgb(var(--color-text))]">
+        Releases
+      </a>
+    </div>
+
+    <p>&copy; {currentYear} Rick Bowman.</p>
+  </div>
+</footer>

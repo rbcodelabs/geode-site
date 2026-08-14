@@ -1,0 +1,55 @@
+---
+const GITHUB_URL = 'https://github.com/rbcodelabs/geode';
+const isDocsRoute = Astro.url.pathname.startsWith('/docs');
+---
+
+<header class="sticky top-0 z-50 border-b border-[rgb(var(--color-border))] bg-[rgb(var(--color-bg))]/85 backdrop-blur">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+    <a href="/" class="flex items-center gap-2 text-lg font-extrabold tracking-tight">
+      <span
+        class="flex h-7 w-7 items-center justify-center rounded-md text-sm text-white"
+        style="background: linear-gradient(135deg, #14B8A6, #A855F7);"
+      >
+        G
+      </span>
+      Geode
+    </a>
+
+    <div class="hidden items-center gap-6 text-sm font-medium text-[rgb(var(--color-text-muted))] md:flex">
+      {
+        isDocsRoute ? (
+          <>
+            <a href="/" class="transition-colors hover:text-[rgb(var(--color-text))]">Home</a>
+            <a href="/docs/" class="transition-colors hover:text-[rgb(var(--color-text))]">Docs</a>
+            <a href="/changelog/" class="transition-colors hover:text-[rgb(var(--color-text))]">Changelog</a>
+          </>
+        ) : (
+          <>
+            <a href="#features" class="transition-colors hover:text-[rgb(var(--color-text))]">Features</a>
+            <a href="#screenshots" class="transition-colors hover:text-[rgb(var(--color-text))]">Screenshots</a>
+            <a href="#install" class="transition-colors hover:text-[rgb(var(--color-text))]">Install</a>
+            <a href="/docs/" class="transition-colors hover:text-[rgb(var(--color-text))]">Docs</a>
+            <a href="/changelog/" class="transition-colors hover:text-[rgb(var(--color-text))]">Changelog</a>
+          </>
+        )
+      }
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a
+        href={GITHUB_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="View Geode on GitHub"
+        class="text-[rgb(var(--color-text-muted))] transition-colors hover:text-[rgb(var(--color-text))]"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+          <path
+            d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.17.69-3.84-1.36-3.84-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.67 5.34-5.21 5.62.41.36.77 1.07.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55A11.26 11.26 0 0 0 23.25 11.75C23.25 5.48 18.27.5 12 .5Z"
+          ></path>
+        </svg>
+      </a>
+      <a href="#install" class="btn btn-primary hidden sm:inline-flex">Download for macOS</a>
+    </div>
+  </nav>
+</header>

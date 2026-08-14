@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import screenshotVaultEditor from '../assets/screenshots/screenshot-vault-editor.png';
+import screenshotReadingView from '../assets/screenshots/screenshot-reading-view.png';
+import screenshotGraphView from '../assets/screenshots/screenshot-graph-view.png';
+import screenshotSearch from '../assets/screenshots/screenshot-search.png';
+import screenshotCommandPalette from '../assets/screenshots/screenshot-command-palette.png';
+
+const shots = [
+  {
+    src: screenshotVaultEditor,
+    alt: 'A vault open in the Geode editor, with Live Preview rendering and the file tree visible',
+    caption: 'Live Preview editing with wikilink autocomplete, autosave, and rename-updates-links',
+  },
+  {
+    src: screenshotReadingView,
+    alt: 'Reading view showing callouts, embeds, highlights, tables, and task lists',
+    caption: 'Reading view renders callouts, embeds, highlights, tags, tables, and task lists',
+  },
+  {
+    src: screenshotGraphView,
+    alt: 'The knowledge graph showing notes connected by their links',
+    caption: 'Knowledge graph plumbing — backlinks, outline, and tag pane keep every connection visible',
+  },
+  {
+    src: screenshotSearch,
+    alt: 'Search results using tag, path, and file operators',
+    caption: 'Search with tag:, path:, and file: operators, quoted phrases, negation, and regex',
+  },
+  {
+    src: screenshotCommandPalette,
+    alt: 'The command palette open with fuzzy-matched commands',
+    caption: 'Command palette and quick switcher for fast keyboard-driven navigation',
+  },
+];
+---
+
+<section id="screenshots" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+  <div class="mx-auto max-w-2xl text-center">
+    <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">See it in your vault</h2>
+    <p class="mt-4 text-[rgb(var(--color-text-muted))]">
+      A closer look at the editor, reading view, and the panels that keep your notes connected.
+    </p>
+  </div>
+
+  <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
+    {
+      shots.map((shot) => (
+        <figure class="card overflow-hidden shadow-lg shadow-black/30">
+          <Image src={shot.src} alt={shot.alt} width={1000} class="w-full" />
+          <figcaption class="border-t border-[rgb(var(--color-border))] px-5 py-4 text-sm text-[rgb(var(--color-text-muted))]">
+            {shot.caption}
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+</section>

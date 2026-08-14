@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+:root {
+  /* Geode — dark-mode-first brand palette (crystal/mineral: teal + amethyst) */
+  --color-bg: 10 11 15;              /* #0A0B0F */
+  --color-surface: 19 21 27;         /* #13151B */
+  --color-surface-alt: 24 26 33;     /* #181A21 */
+  --color-border: 38 41 51;          /* #262933 */
+  --color-text: 243 245 247;         /* #F3F5F7 */
+  --color-text-muted: 150 156 168;   /* #969CA8 */
+  --color-primary: 20 184 166;       /* #14B8A6 teal */
+  --color-secondary: 168 85 247;     /* #A855F7 amethyst */
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: rgb(var(--color-text));
+  background-color: rgb(var(--color-bg));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  color: rgb(var(--color-text));
+}
+
+::selection {
+  background-color: rgba(var(--color-primary), 0.35);
+  color: rgb(var(--color-text));
+}
+
+/* Subtle dot-grid texture for hero background */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(150, 156, 168, 0.18) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.text-gradient {
+  background-image: linear-gradient(90deg, rgb(var(--color-primary)), rgb(var(--color-secondary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Component classes must live in @layer components so that Tailwind
+   utilities (e.g. `hidden`, `sm:inline-flex`) still win the cascade —
+   unlayered CSS beats @layer CSS regardless of source order. */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors duration-200;
+  }
+
+  .btn-primary {
+    background-color: rgb(var(--color-primary));
+    color: rgb(var(--color-bg));
+  }
+
+  .btn-primary:hover {
+    background-color: rgb(var(--color-secondary));
+    color: rgb(var(--color-text));
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: rgb(var(--color-text));
+    border: 1px solid rgb(var(--color-border));
+  }
+
+  .btn-secondary:hover {
+    border-color: rgb(var(--color-primary));
+    background-color: rgba(var(--color-primary), 0.08);
+  }
+
+  .card {
+    background-color: rgb(var(--color-surface));
+    border: 1px solid rgb(var(--color-border));
+    border-radius: 0.75rem;
+  }
+
+  /* Prose styling for rendered Markdown docs content (src/content/docs/**).
+     Astro's content collections render plain HTML with no utility classes
+     attached, so tag selectors scoped to .docs-content carry the styling. */
+  .docs-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    border-top: 1px solid rgb(var(--color-border));
+    padding-top: 2rem;
+  }
+
+  .docs-content > div > h2:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .docs-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .docs-content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .docs-content p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    color: rgb(var(--color-text));
+  }
+
+  .docs-content ul,
+  .docs-content ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    line-height: 1.75;
+  }
+
+  .docs-content ul {
+    list-style-type: disc;
+  }
+
+  .docs-content ol {
+    list-style-type: decimal;
+  }
+
+  .docs-content li {
+    margin-top: 0.375rem;
+  }
+
+  .docs-content li > ul,
+  .docs-content li > ol {
+    margin-top: 0.375rem;
+    margin-bottom: 0;
+  }
+
+  .docs-content a {
+    color: rgb(var(--color-secondary));
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    overflow-wrap: anywhere;
+  }
+
+  .docs-content a:hover {
+    color: rgb(var(--color-primary));
+  }
+
+  .docs-content strong {
+    font-weight: 700;
+    color: rgb(var(--color-text));
+  }
+
+  .docs-content code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background-color: rgb(var(--color-surface));
+    border: 1px solid rgb(var(--color-border));
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.35rem;
+    overflow-wrap: anywhere;
+  }
+
+  .docs-content pre {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    overflow-x: auto;
+    border-radius: 0.75rem;
+    border: 1px solid rgb(var(--color-border));
+    background-color: rgb(var(--color-surface));
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .docs-content pre code {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .docs-content blockquote {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-left: 3px solid rgb(var(--color-primary));
+    padding-left: 1rem;
+    color: rgb(var(--color-text-muted));
+  }
+
+  .docs-content hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-color: rgb(var(--color-border));
+  }
+
+  .docs-content table {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .docs-content th,
+  .docs-content td {
+    border: 1px solid rgb(var(--color-border));
+    padding: 0.6rem 0.9rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .docs-content th {
+    background-color: rgb(var(--color-surface));
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .docs-content tr:nth-child(even) td {
+    background-color: rgb(var(--color-surface-alt));
+  }
+
+  .docs-content table code {
+    white-space: nowrap;
+  }
+
+  .docs-content img {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgb(var(--color-border));
+    max-width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .docs-content table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+}
