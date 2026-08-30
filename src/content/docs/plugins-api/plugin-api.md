@@ -7,6 +7,11 @@ order: 2
 
 Clean-room reference for building an API-compatible extension layer. Sources: https://docs.obsidian.md (developer docs), `obsidianmd/obsidian-api` (`obsidian.d.ts`), `obsidianmd/obsidian-releases` (distribution), `obsidianmd/obsidian-sample-plugin` and `obsidian-sample-theme` (templates). API surface as of mid-2026 (app ~1.13).
 
+> **Using Geode?** The `.obsidian/themes/` paths and community registry below
+> document Obsidian's extension contract. Geode installs themes under
+> `.geode/themes/` directly from GitHub; follow the [Community Themes guide](/docs/guides/community-themes/)
+> for the current user workflow.
+
 ---
 
 ## 1. Plugin Anatomy

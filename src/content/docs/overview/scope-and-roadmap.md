@@ -16,6 +16,7 @@ branding were used. The name, icon, and styling are original.
 | Doc | Contents |
 |---|---|
 | [Core App](/docs/core-app/specification/) | Vaults, files/folders, editor modes, Obsidian Flavored Markdown, properties, linking, search syntax, workspace, hotkeys, settings, appearance |
+| [Community Themes Guide](/docs/guides/community-themes/) | Install, apply, update, pin, stop tracking, and uninstall themes in Geode |
 | [Core Plugins](/docs/plugins-api/core-plugins/) | All 30 core plugins, incl. deep dives on Bases (.base), Canvas (JSON Canvas 1.0), Graph view, Templates, Daily notes, Sync/Publish service capabilities |
 | [Plugin & Theme API](/docs/plugins-api/plugin-api/) | Plugin anatomy (manifest, lifecycle), the full API class hierarchy (App, Vault, Workspace, MetadataCache, Editor…), events, CM6 editor extensions, themes/CSS variables, community distribution, obsidian:// URIs |
 | [Formats & Platform](/docs/formats-platform/formats-and-platform/) | `.obsidian` config files, JSON Canvas spec, Bases YAML format, URI scheme, Sync/Publish internals (E2EE), platform matrix, changelog evolution v1.5→v1.13 |
@@ -35,6 +36,7 @@ branding were used. The name, icon, and styling are original.
 - **Core views**: file explorer (tree, context menus, active highlight), search (operators: `tag:` `path:` `file:` `content:`, `"phrases"`, `-negation`, `/regex/`), backlinks pane, outline pane (click-to-jump), tag pane (click-to-search)
 - **Command system**: command palette (Cmd+P), quick switcher (Cmd+O, create-on-no-match), hotkey registry, daily note (Cmd+D), random note
 - **Settings & theming**: dark/light via CSS variable theme (`.theme-dark`/`.theme-light` body classes, Obsidian-convention variable names), readable line length, per-vault settings persisted in `.geode/`
+- **Community themes**: install multiple themes from a GitHub `owner/repo`, apply one at a time, revert to Default, and manage opt-in updates, pins, tracking, and uninstalling (see the [Community Themes guide](/docs/guides/community-themes/))
 - **Live Preview mode** (default): CM6 decorations hide markdown syntax away from the cursor — headings, emphasis, inline code, quotes, highlights; wikilinks/links render as clickable text; task markers become toggling checkboxes; HRs render as lines. Gotcha learned the hard way: block widgets must carry no external margins or CM's height map drifts and cursor motion breaks
 - **Properties editor**: frontmatter renders as an integrated, editable typed table (block widget) that serializes back to YAML
 
@@ -52,7 +54,7 @@ branding were used. The name, icon, and styling are original.
 2. **Graph view** — canvas force-directed renderer over `resolvedLinks`; local graph
 3. **Unlinked mentions** in backlinks pane; backlink context snippets
 4. **Canvas** — `.canvas` JSON Canvas 1.0 editor (see Core Plugins and Formats & Platform)
-5. **Plugin API layer** — `geode` module mirroring the documented `obsidian` API surface (see Plugin & Theme API); CSS snippets + community themes
+5. **Plugin API layer** — `geode` module mirroring the documented `obsidian` API surface (see Plugin & Theme API); CSS snippets
 6. **Templates, bookmarks, note composer, page preview (hover), slash commands, workspaces** (see Core Plugins)
 7. **Search upgrades** — `line:`/`block:`/`section:`/`task:` operators, property `[key:value]` queries, embedded query blocks
 8. **Bases** — `.base` table/card views with formula language (see Core Plugins and Formats & Platform)
