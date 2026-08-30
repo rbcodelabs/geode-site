@@ -20,11 +20,12 @@ branding were used. The name, icon, and styling are original.
 | [Plugin & Theme API](/docs/plugins-api/plugin-api/) | Plugin anatomy (manifest, lifecycle), the full API class hierarchy (App, Vault, Workspace, MetadataCache, Editor…), events, CM6 editor extensions, themes/CSS variables, community distribution, obsidian:// URIs |
 | [Formats & Platform](/docs/formats-platform/formats-and-platform/) | `.obsidian` config files, JSON Canvas spec, Bases YAML format, URI scheme, Sync/Publish internals (E2EE), platform matrix, changelog evolution v1.5→v1.13 |
 
-## Implementation status (v0.1)
+## Implementation status
 
 ### Done — working and verified
 
-- **Shell**: Electron + TypeScript + CodeMirror 6 (same stack as the original, which keeps a future API-compatible plugin layer feasible); esbuild build; strict tsc
+- **Desktop shell**: Electron + TypeScript + CodeMirror 6 (same stack as the original, which keeps a future API-compatible plugin layer feasible); esbuild build; strict tsc
+- **Managed-vault iOS MVP**: the Capacitor app has passed native and UI automation plus physical-iPhone validation for managed-vault discovery and opening notes. This validates the core native path; it is not a claim of production or App Store readiness.
 - **Vaults**: open any folder as a vault, recent-vault persistence, vault picker; filesystem watcher (chokidar) reflects external edits/creates/deletes live
 - **Vault model**: file tree, create/rename/trash (to OS trash) for files and folders, "Untitled n" allocation, content cache
 - **Metadata cache**: YAML frontmatter (incl. aliases/tags), wikilinks + embeds with positions, inline #tags (code-block aware), headings, resolved/unresolved links, backlink index, link resolution (exact path → relative → shortest basename → alias)
@@ -55,8 +56,9 @@ branding were used. The name, icon, and styling are original.
 6. **Templates, bookmarks, note composer, page preview (hover), slash commands, workspaces** (see Core Plugins)
 7. **Search upgrades** — `line:`/`block:`/`section:`/`task:` operators, property `[key:value]` queries, embedded query blocks
 8. **Bases** — `.base` table/card views with formula language (see Core Plugins and Formats & Platform)
-9. **Mobile** (Capacitor) and packaging/auto-update (electron-builder), pop-out windows, vertical splits/stacked tabs
-10. **Sync alternative** — document Git/Syncthing workflows; optional E2EE sync server is out of scope for core
+9. **iOS production gates** — add Files/File Provider-backed vault support, validate community plugin compatibility, complete release signing and distribution, and publish the first public release
+10. **Desktop packaging** — auto-update (electron-builder), pop-out windows, vertical splits/stacked tabs
+11. **Sync alternative** — document Git/Syncthing workflows; optional E2EE sync server is out of scope for core
 
 ## Architecture map
 

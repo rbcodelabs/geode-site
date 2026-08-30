@@ -457,7 +457,15 @@ Geode's near-term plan is to document Git/Syncthing workflows rather than build 
 | Mobile-only UX (1.11–1.13) | — | iOS Lock Screen/Control Center/Home Screen widgets, Siri + Spotlight actions, iOS Share Sheet (1.12.4/1.13); Android widgets + Quick Settings Tile; auto-hiding navigation, full-screen mode, tab switcher; shake-to-debug (1.10) |
 | CLI | Obsidian CLI binary bundled since 1.12 (autocompletion 1.12.5+) | n/a |
 
-Feature parity is otherwise near-total: editor, Canvas, Bases, properties, plugins all run on mobile. Geode currently targets desktop (macOS) only — see the [Overview & Roadmap](/docs/overview/scope-and-roadmap/) for the mobile item on the priority list.
+Obsidian's feature parity is otherwise near-total: editor, Canvas, Bases,
+properties, and plugins all run on mobile.
+
+Geode's managed-vault iOS MVP has passed native and UI automation plus
+physical-iPhone validation for vault discovery and opening notes. macOS remains
+the only public download: Files/File Provider-backed vaults, community plugin
+compatibility, release signing and distribution, and a public iOS release remain
+open production gates. See the [Overview & Roadmap](/docs/overview/scope-and-roadmap/)
+for the current implementation boundary.
 
 ---
 
