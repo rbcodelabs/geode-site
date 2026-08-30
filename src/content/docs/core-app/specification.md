@@ -7,6 +7,10 @@ order: 1
 
 Source of truth for cloning Obsidian's core application features. Reverse-engineered from the official documentation at https://help.obsidian.md (canonical host: https://obsidian.md/help/), fetched 2026-06-10.
 
+> **Using Geode?** This page preserves Obsidian's reference behavior, including
+> its `.obsidian/themes/` paths and theme marketplace workflow. For Geode's
+> current `.geode/themes/` workflow, see [Install and manage community themes](/docs/guides/community-themes/).
+
 Scope: vaults, files/folders, editor, Obsidian Flavored Markdown, properties, linking, search, workspace, command palette, quick switcher, hotkeys, settings, appearance, note composer, file recovery, format converter, help/sandbox. Excludes paid services (Sync, Publish), Canvas, Bases, Web Clipper, and the plugin API (covered in the [Plugin & Theme API](/docs/plugins-api/plugin-api/) and [Core Plugins](/docs/plugins-api/core-plugins/) docs).
 
 ## 1. Product Overview

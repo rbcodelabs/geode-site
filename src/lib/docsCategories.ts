@@ -5,6 +5,7 @@
 
 export const CATEGORY_ORDER = [
   'overview',
+  'guides',
   'core-app',
   'plugins-api',
   'formats-platform',
@@ -13,6 +14,7 @@ export const CATEGORY_ORDER = [
 
 export const CATEGORY_LABELS: Record<string, string> = {
   overview: 'Overview',
+  guides: 'Guides',
   'core-app': 'Core App',
   'plugins-api': 'Plugins & API',
   'formats-platform': 'Formats & Platform',

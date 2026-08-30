@@ -55,3 +55,28 @@ test('platform documentation no longer describes Geode as macOS-only', async () 
   assert.doesNotMatch(platforms, /Geode currently targets desktop \(macOS\) only/i);
   assert.match(platforms, /managed-vault iOS MVP/i);
 });
+
+test('community themes guide documents the current Geode workflow and limits', async () => {
+  const guide = await readProjectFile('src/content/docs/guides/community-themes.md');
+
+  assert.match(guide, /Settings.*Community plugins & themes.*Install from GitHub.*Add…/s);
+  assert.match(guide, /`owner\/repo`/);
+  assert.match(guide, /\bAuto-detect\b/);
+  assert.match(guide, /\bTheme\b/);
+  assert.match(guide, /\bCheck\b/);
+  assert.match(guide, /Enable \/ apply after installing/);
+  assert.match(guide, /Settings.*Appearance.*Theme/s);
+  assert.match(guide, /multiple community themes installed/i);
+  assert.match(guide, /only one.*active/is);
+  assert.match(guide, /\bDefault\b/);
+  assert.match(guide, /auto-update is off by default/i);
+  assert.match(guide, /\bAuto-update\b/);
+  assert.match(guide, /\bpin\b/);
+  assert.match(guide, /\bUpdate now\b/);
+  assert.match(guide, /\bStop updating\b/);
+  assert.match(guide, /\bUninstall\b/);
+  assert.match(guide, /<vault>\/\.geode\/themes\/<name>\//);
+  assert.match(guide, /`theme\.css`/);
+  assert.match(guide, /`manifest\.json`/);
+  assert.match(guide, /no browsable (?:theme )?(?:catalog|marketplace)/i);
+});
