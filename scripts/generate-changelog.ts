@@ -70,7 +70,7 @@ function main() {
     const version = release.tag_name.replace(/^v/, '');
     const body =
       release.body && release.body.trim().length > 0
-        ? release.body
+        ? release.body.trim()
         : '_No release notes recorded for this version._';
 
     const frontmatter = [
