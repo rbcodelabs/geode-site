@@ -18,12 +18,19 @@ test('landing page distinguishes the validated iOS MVP from public availability'
 test('landing page and changelog publish the current Geode release', async () => {
   const [hero, currentRelease] = await Promise.all([
     readProjectFile('src/components/Hero.astro'),
-    readProjectFile('src/content/changelog/0.9.2.md'),
+    readProjectFile('src/content/changelog/0.13.0.md'),
   ]);
 
-  assert.match(hero, /const VERSION = '0\.9\.2';/);
-  assert.match(currentRelease, /^version: "0\.9\.2"$/m);
-  assert.match(currentRelease, /^tag: "v0\.9\.2"$/m);
+  assert.match(hero, /const VERSION = '0\.13\.0';/);
+  assert.match(currentRelease, /^version: "0\.13\.0"$/m);
+  assert.match(currentRelease, /^tag: "v0\.13\.0"$/m);
+});
+
+test('Markdown comments guide identifies the released macOS version', async () => {
+  const guide = await readProjectFile('src/content/docs/core-app/markdown-comments.md');
+
+  assert.match(guide, /Available in Geode v0\.13\.0 and later for macOS/);
+  assert.doesNotMatch(guide, /Upcoming feature/i);
 });
 
 test('generated changelog entries end with exactly one newline', async () => {
@@ -33,7 +40,7 @@ test('generated changelog entries end with exactly one newline', async () => {
     filenames.map((filename) => readFile(new URL(filename, changelogDirectory), 'utf8')),
   );
 
-  assert.equal(entries.length, 80);
+  assert.equal(entries.length, 95);
   for (const entry of entries) {
     assert.match(entry, /[^\n]\n$/);
   }
