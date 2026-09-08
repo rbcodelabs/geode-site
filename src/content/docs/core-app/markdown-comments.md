@@ -5,7 +5,7 @@ category: core-app
 order: 3
 ---
 
-> Upcoming feature: this guide accompanies the Markdown comments implementation and does not imply availability in the latest released app.
+> Available in Geode v0.13.0 and later for macOS.
 
 Markdown comments attach a discussion to a passage in a note. Threads live inside the Markdown file, so they travel with it through rename, backup, and sync without an account or a separate comment service.
 
