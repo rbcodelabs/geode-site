@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "plugins": [
+    {
+      "id": "calendar",
+      "name": "Calendar",
+      "description": "Calendar view of your daily notes.",
+      "github": { "owner": "liamcain", "repo": "obsidian-calendar-plugin" },
+      "manifest": { "version": "1.5.10", "releaseTag": "1.5.10", "minAppVersion": "0.9.11" },
+      "platforms": ["desktop"],
+      "minimumGeodeVersion": "0.2.19",
+      "certifiedWithGeodeVersion": "0.2.19",
+      "artifactHashes": {
+        "main.js": "7fb339e9cf9fdbe5a801fa2b8ab85b366b5b3777fbd193cbc8728bc27711d125",
+        "manifest.json": "f3e9581338648512baa12d5b458490f7fd367918f7bdb6bd86171ce57be7d08b"
+      },
+      "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/98526c2940d9c691497f9c810457311e48d27c3f/tests/fixtures/plugins/calendar/README.md",
+      "status": "active"
+    },
+    {
+      "id": "obsidian-minimal-settings",
+      "name": "Minimal Theme Settings",
+      "description": "Change the colors, fonts, and features of Minimal Theme.",
+      "github": { "owner": "kepano", "repo": "obsidian-minimal-settings" },
+      "manifest": { "version": "9.0.0", "releaseTag": "9.0.0", "minAppVersion": "1.13.0" },
+      "platforms": ["desktop"],
+      "minimumGeodeVersion": "0.12.4",
+      "certifiedWithGeodeVersion": "0.12.4",
+      "artifactHashes": {
+        "main.js": "f754e0ce6523e433bff8e7995a848f7d7fac205399f9ab3b1258430261fd90c4",
+        "manifest.json": "2038f9c1f5ca026ebc1f3e156bad97c671d2c401a20718384508ef72071e8c5f",
+        "styles.css": "50084760da927a5bf5ac1b9d3b960dc52e1d0a3bf690e54df8f4d76f8212628c"
+      },
+      "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/4a1305f6659d3662e9bea5a21ab2cf44d14cf42b/tests/fixtures/plugins/minimal-settings-compat/README.md",
+      "status": "active"
+    }
+  ]
+}
