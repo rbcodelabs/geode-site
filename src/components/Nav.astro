@@ -1,6 +1,6 @@
 ---
 const GITHUB_URL = 'https://github.com/rbcodelabs/geode';
-const isDocsRoute = Astro.url.pathname.startsWith('/docs');
+const usesSiteNavigation = Astro.url.pathname.startsWith('/docs') || Astro.url.pathname.startsWith('/plugins');
 ---
 
 <header class="sticky top-0 z-50 border-b border-[rgb(var(--color-border))] bg-[rgb(var(--color-bg))]/85 backdrop-blur">
@@ -17,10 +17,11 @@ const isDocsRoute = Astro.url.pathname.startsWith('/docs');
 
     <div class="hidden items-center gap-6 text-sm font-medium text-[rgb(var(--color-text-muted))] md:flex">
       {
-        isDocsRoute ? (
+        usesSiteNavigation ? (
           <>
             <a href="/" class="transition-colors hover:text-[rgb(var(--color-text))]">Home</a>
             <a href="/docs/" class="transition-colors hover:text-[rgb(var(--color-text))]">Docs</a>
+            <a href="/plugins/" class="transition-colors hover:text-[rgb(var(--color-text))]">Plugins</a>
             <a href="/changelog/" class="transition-colors hover:text-[rgb(var(--color-text))]">Changelog</a>
           </>
         ) : (
@@ -29,6 +30,7 @@ const isDocsRoute = Astro.url.pathname.startsWith('/docs');
             <a href="#screenshots" class="transition-colors hover:text-[rgb(var(--color-text))]">Screenshots</a>
             <a href="#install" class="transition-colors hover:text-[rgb(var(--color-text))]">Install</a>
             <a href="/docs/" class="transition-colors hover:text-[rgb(var(--color-text))]">Docs</a>
+            <a href="/plugins/" class="transition-colors hover:text-[rgb(var(--color-text))]">Plugins</a>
             <a href="/changelog/" class="transition-colors hover:text-[rgb(var(--color-text))]">Changelog</a>
           </>
         )
@@ -49,7 +51,7 @@ const isDocsRoute = Astro.url.pathname.startsWith('/docs');
           ></path>
         </svg>
       </a>
-      <a href="#install" class="btn btn-primary hidden sm:inline-flex">Download for macOS</a>
+      <a href="/#install" class="btn btn-primary hidden sm:inline-flex">Download for macOS</a>
     </div>
   </nav>
 </header>
