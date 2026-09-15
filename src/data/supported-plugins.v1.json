@@ -33,6 +33,23 @@
       },
       "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/4a1305f6659d3662e9bea5a21ab2cf44d14cf42b/tests/fixtures/plugins/minimal-settings-compat/README.md",
       "status": "active"
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal",
+      "description": "Integrate consoles, shells, and terminals.",
+      "github": { "owner": "polyipseity", "repo": "obsidian-terminal" },
+      "manifest": { "version": "3.27.2", "releaseTag": "3.27.2", "minAppVersion": "1.4.11" },
+      "platforms": ["desktop"],
+      "minimumGeodeVersion": "0.20.0",
+      "certifiedWithGeodeVersion": "0.20.0",
+      "artifactHashes": {
+        "main.js": "227e5cd8915ca9649007dfc089299b231eafebf06142bd1c715a0d7ae22bb467",
+        "manifest.json": "213714012652ff27e0fb0a798cd9549752d3d02d41eee6459f88790131d896d2",
+        "styles.css": "39ab74656d85ed316e92d94b891eb9800a6244bb2a4375916065e51703f572bb"
+      },
+      "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/8619c3e542c91aa8ec81f7d2ddf65c81c984214e/tests/fixtures/plugins/terminal/README.md",
+      "status": "active"
     }
   ]
 }

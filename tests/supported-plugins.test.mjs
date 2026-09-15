@@ -153,7 +153,7 @@ test('publishes one canonical schema-v1 registry source', async () => {
 
   const registry = JSON.parse(await readFile(registryUrl, 'utf8'));
   assert.equal(registry.schemaVersion, 1);
-  assert.deepEqual(registry.plugins.map(({ id }) => id), ['calendar', 'obsidian-minimal-settings']);
+  assert.deepEqual(registry.plugins.map(({ id }) => id), ['calendar', 'obsidian-minimal-settings', 'terminal']);
 });
 
 test('the plugins page renders the canonical registry with an exact-version support claim', async () => {
