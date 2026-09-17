@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { docs, currentId } = Astro.props;
+const currentTitle = docs.find((doc) => doc.id === currentId)?.data.title ?? 'Documentation';
 
 const grouped = CATEGORY_ORDER.map((category) => ({
   category,
@@ -18,27 +19,41 @@ const grouped = CATEGORY_ORDER.map((category) => ({
 })).filter((group) => group.items.length > 0);
 ---
 
-<aside class="mb-10 shrink-0 lg:mb-0 lg:w-60">
-  <nav class="space-y-6 lg:sticky lg:top-24" aria-label="Documentation">
+<aside class="docs-sidebar">
+  <details class="docs-mobile-nav">
+    <summary>
+      <span>Browse documentation</span>
+      <small>{currentTitle}</small>
+    </summary>
+    <nav aria-label="Documentation">
+      {
+        grouped.map((group) => (
+          <div class="docs-nav-group">
+            <h2>{group.label}</h2>
+            <ul>
+              {group.items.map((item) => (
+                <li>
+                  <a href={`/docs/${item.id}/`} aria-current={item.id === currentId ? 'page' : undefined}>
+                    {item.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </nav>
+  </details>
+
+  <nav class="docs-desktop-nav" aria-label="Documentation">
     {
       grouped.map((group) => (
-        <div>
-          <h3 class="px-2 text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-text-muted))]">
-            {group.label}
-          </h3>
-          <ul class="mt-2 space-y-0.5">
+        <div class="docs-nav-group">
+          <h2>{group.label}</h2>
+          <ul>
             {group.items.map((item) => (
               <li>
-                <a
-                  href={`/docs/${item.id}/`}
-                  aria-current={item.id === currentId ? 'page' : undefined}
-                  class={
-                    'block rounded-md px-2 py-1.5 text-sm transition-colors ' +
-                    (item.id === currentId
-                      ? 'bg-[rgb(var(--color-primary))]/15 font-semibold text-[rgb(var(--color-text))]'
-                      : 'text-[rgb(var(--color-text-muted))] hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-text))]')
-                  }
-                >
+                <a href={`/docs/${item.id}/`} aria-current={item.id === currentId ? 'page' : undefined}>
                   {item.data.title}
                 </a>
               </li>

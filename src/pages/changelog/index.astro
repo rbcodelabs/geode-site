@@ -12,73 +12,74 @@ const groups = groupByMinor(sortedEntries);
 const dateFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const title = 'Changelog — Geode';
-const description = 'Every release of Geode, from the earliest tag to the latest version, with full release notes pulled from GitHub.';
+const description =
+  'Every release of Geode, from the earliest tag to the latest version, with full release notes pulled from GitHub.';
 ---
 
 <Layout title={title} description={description}>
-  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-    <div class="mx-auto max-w-2xl text-center">
-      <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Changelog</h1>
-      <p class="mt-4 text-[rgb(var(--color-text-muted))]">
+  <section class="changelog-page">
+    <div class="changelog-hero">
+      <div class="docs-kicker">Release history</div>
+      <h1>Changelog</h1>
+      <p>
         Every release of Geode, tracked here in full. For the unstyled view, see the
         {' '}
-        <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer" class="text-[rgb(var(--color-secondary))] underline underline-offset-2 hover:text-[rgb(var(--color-primary))]">
+        <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer">
           raw GitHub Releases list
         </a>.
       </p>
     </div>
 
-    <nav aria-label="Jump to version" class="mt-10 flex flex-wrap justify-center gap-2 border-y border-[rgb(var(--color-border))] py-4">
+    <nav aria-label="Jump to version" class="changelog-version-nav">
       {
         groups.map((group) => (
-          <a
-            href={`#${group.id}`}
-            class="rounded-md px-3 py-1.5 text-sm font-medium text-[rgb(var(--color-text-muted))] transition-colors hover:bg-[rgb(var(--color-surface))] hover:text-[rgb(var(--color-text))]"
-          >
-            {group.label}
-          </a>
+          <a href={`#${group.id}`}>{group.label}</a>
         ))
       }
     </nav>
 
-    <div class="mt-12 space-y-16">
+    <details class="changelog-mobile-jump">
+      <summary>Jump to version</summary>
+      <nav aria-label="Jump to version">
+        {groups.map((group) => <a href={`#${group.id}`}>{group.label}</a>)}
+      </nav>
+    </details>
+
+    <div class="changelog-groups">
       {
         groups.map(async (group) => (
-          <div>
-            <h2 id={group.id} class="scroll-mt-24 text-2xl font-extrabold tracking-tight">
-              {group.label}
-            </h2>
+          <section class="changelog-group">
+            <h2 id={group.id}>{group.label}</h2>
 
-            <div class="mt-8 space-y-12">
+            <div class="changelog-entries">
               {await Promise.all(
                 group.entries.map(async (entry) => {
                   const { Content } = await render(entry);
                   const id = versionAnchorId(entry.data.version);
                   return (
-                    <div>
-                      <div id={id} class="scroll-mt-24 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-[rgb(var(--color-border))] pb-3">
-                        <span class="text-lg font-bold text-[rgb(var(--color-text))]">v{entry.data.version}</span>
-                        <span class="text-sm text-[rgb(var(--color-text-muted))]">{dateFormatter.format(entry.data.date)}</span>
+                    <article class="changelog-entry">
+                      <header id={id}>
+                        <span class="changelog-version">v{entry.data.version}</span>
+                        <span class="changelog-date">{dateFormatter.format(entry.data.date)}</span>
                         <a
                           href={entry.data.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          class="ml-auto text-sm text-[rgb(var(--color-secondary))] underline underline-offset-2 hover:text-[rgb(var(--color-primary))]"
                         >
                           View on GitHub
                         </a>
-                      </div>
-                      <div class="docs-content mt-4">
+                      </header>
+                      <div class="docs-content changelog-content">
                         <div>
                           <Content />
                         </div>
                       </div>
-                    </div>
+                    </article>
                   );
                 })
               )}
             </div>
-          </div>
+          </section>
         ))
       }
     </div>

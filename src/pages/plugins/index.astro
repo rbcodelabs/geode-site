@@ -8,60 +8,58 @@ const plugins = supportedPluginsRegistry.plugins;
 ---
 
 <Layout title={title} description={description}>
-  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-    <div class="mx-auto max-w-3xl text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--color-primary))]">Compatibility catalog</p>
-      <h1 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Supported plugins</h1>
-      <p class="mt-5 text-lg leading-8 text-[rgb(var(--color-text-muted))]">
+  <section class="plugins-page">
+    <div class="plugins-hero">
+      <div class="docs-kicker">Compatibility catalog</div>
+      <h1>Supported plugins</h1>
+      <p>
         Each listing covers one exact release whose distributable files were exercised against Geode.
         Newer releases are not covered until they are tested and listed separately.
       </p>
-      <p class="mt-3 text-sm text-[rgb(var(--color-text-muted))]">
+      <p class="plugins-api-link">
         The app reads the same catalog from{' '}
-        <a class="font-mono text-[rgb(var(--color-secondary))] underline underline-offset-2 hover:text-[rgb(var(--color-primary))]" href="/supported-plugins/v1.json">
+        <a href="/supported-plugins/v1.json">
           /supported-plugins/v1.json
         </a>.
       </p>
     </div>
 
-    <div class="mt-12 grid gap-6 lg:grid-cols-2">
+    <div class="plugins-grid">
       {
         plugins.map((plugin) => (
-          <article class="rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] p-6 sm:p-8">
-            <div class="flex flex-wrap items-start justify-between gap-4">
+          <article class="plugin-card card">
+            <div class="plugin-card-heading">
               <div>
-                <p class="font-mono text-sm text-[rgb(var(--color-primary))]">{plugin.id}</p>
-                <h2 class="mt-1 text-2xl font-bold tracking-tight">{plugin.name}</h2>
+                <p class="plugin-id">{plugin.id}</p>
+                <h2>{plugin.name}</h2>
               </div>
-              <span class="rounded-full border border-[rgb(var(--color-primary))]/40 bg-[rgb(var(--color-primary))]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-primary))]">
-                {plugin.status}
-              </span>
+              <span class="plugin-status">{plugin.status}</span>
             </div>
 
-            <p class="mt-4 leading-7 text-[rgb(var(--color-text-muted))]">{plugin.description}</p>
+            <p class="plugin-description">{plugin.description}</p>
 
-            <dl class="mt-6 grid grid-cols-1 gap-4 border-y border-[rgb(var(--color-border))] py-6 sm:grid-cols-2">
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-text-muted))]">Tested release</dt><dd class="mt-1 font-mono text-sm">{plugin.manifest.releaseTag}</dd></div>
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-text-muted))]">Manifest version</dt><dd class="mt-1 font-mono text-sm">{plugin.manifest.version}</dd></div>
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-text-muted))]">Requires Geode</dt><dd class="mt-1 font-mono text-sm">{plugin.minimumGeodeVersion}+</dd></div>
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-text-muted))]">Certified with Geode</dt><dd class="mt-1 font-mono text-sm">{plugin.certifiedWithGeodeVersion}</dd></div>
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-text-muted))]">Platform</dt><dd class="mt-1 capitalize">{plugin.platforms.join(', ')}</dd></div>
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-text-muted))]">Declared minimum Obsidian version</dt><dd class="mt-1 font-mono text-sm">{plugin.manifest.minAppVersion}</dd></div>
-              <div><dt class="text-xs font-semibold uppercase tracking-wide text-[rgb(var(--color-text-muted))]">Source</dt><dd class="mt-1 font-mono text-sm">{plugin.github.owner}/{plugin.github.repo}</dd></div>
+            <dl class="plugin-details">
+              <div><dt>Tested release</dt><dd>{plugin.manifest.releaseTag}</dd></div>
+              <div><dt>Manifest version</dt><dd>{plugin.manifest.version}</dd></div>
+              <div><dt>Requires Geode</dt><dd>{plugin.minimumGeodeVersion}+</dd></div>
+              <div><dt>Certified with Geode</dt><dd>{plugin.certifiedWithGeodeVersion}</dd></div>
+              <div><dt>Platform</dt><dd class="plugin-platform">{plugin.platforms.join(', ')}</dd></div>
+              <div><dt>Declared minimum Obsidian version</dt><dd>{plugin.manifest.minAppVersion}</dd></div>
+              <div><dt>Source</dt><dd>{plugin.github.owner}/{plugin.github.repo}</dd></div>
             </dl>
 
-            <div class="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm font-medium">
-              <a href={`https://github.com/${plugin.github.owner}/${plugin.github.repo}/releases/tag/${plugin.manifest.releaseTag}`} target="_blank" rel="noopener noreferrer" class="text-[rgb(var(--color-secondary))] underline underline-offset-2 hover:text-[rgb(var(--color-primary))]">View exact release</a>
-              <a href={plugin.evidenceUrl} target="_blank" rel="noopener noreferrer" class="text-[rgb(var(--color-secondary))] underline underline-offset-2 hover:text-[rgb(var(--color-primary))]">Review compatibility evidence</a>
+            <div class="plugin-links">
+              <a href={`https://github.com/${plugin.github.owner}/${plugin.github.repo}/releases/tag/${plugin.manifest.releaseTag}`} target="_blank" rel="noopener noreferrer">View exact release</a>
+              <a href={plugin.evidenceUrl} target="_blank" rel="noopener noreferrer">Review compatibility evidence</a>
             </div>
           </article>
         ))
       }
     </div>
 
-    <aside class="mx-auto mt-12 max-w-3xl rounded-xl border border-[rgb(var(--color-border))] p-6 text-sm leading-6 text-[rgb(var(--color-text-muted))]">
-      <h2 class="font-semibold text-[rgb(var(--color-text))]">What “supported” means</h2>
-      <p class="mt-2">Geode support applies only to the version, platform, and release artifacts shown here. It is not a claim that every feature or future release from the same repository will work. Artifact hashes and test evidence are published in the machine-readable catalog for reproducibility.</p>
+    <aside class="plugins-note">
+      <h2>What “supported” means</h2>
+      <p>Geode support applies only to the version, platform, and release artifacts shown here. It is not a claim that every feature or future release from the same repository will work. Artifact hashes and test evidence are published in the machine-readable catalog for reproducibility.</p>
     </aside>
   </section>
 </Layout>

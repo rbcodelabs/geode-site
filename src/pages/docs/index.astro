@@ -16,35 +16,32 @@ const description =
 ---
 
 <Layout title={title} description={description}>
-  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-    <div class="mx-auto max-w-2xl text-center">
-      <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Documentation</h1>
-      <p class="mt-4 text-[rgb(var(--color-text-muted))]">
+  <section class="docs-index">
+    <div class="docs-index-hero">
+      <div class="docs-kicker">Learn Geode</div>
+      <h1>Documentation</h1>
+      <p>
         Start with task-oriented guides for using Geode, then explore the implementation roadmap, reference
         specifications, plugin API surface, and architecture decisions behind the app.
       </p>
     </div>
 
-    <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="docs-category-grid">
       {
         categories.map((cat) => (
-          <div class="card p-6">
-            <h2 class="text-lg font-bold">
-              <a href={`/docs/${cat.first.id}/`} class="transition-colors hover:text-[rgb(var(--color-primary))]">
-                {cat.label}
-              </a>
+          <section class="docs-category-card card">
+            <h2>
+              <a href={`/docs/${cat.first.id}/`}>{cat.label} <span aria-hidden="true">↗</span></a>
             </h2>
-            <p class="mt-2 text-sm leading-relaxed text-[rgb(var(--color-text-muted))]">{cat.first.data.description}</p>
-            <ul class="mt-4 space-y-1.5 border-t border-[rgb(var(--color-border))] pt-4 text-sm">
+            <p>{cat.first.data.description}</p>
+            <ul>
               {cat.items.map((item) => (
                 <li>
-                  <a href={`/docs/${item.id}/`} class="text-[rgb(var(--color-text-muted))] transition-colors hover:text-[rgb(var(--color-primary))]">
-                    {item.data.title}
-                  </a>
+                  <a href={`/docs/${item.id}/`}>{item.data.title}</a>
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
         ))
       }
     </div>

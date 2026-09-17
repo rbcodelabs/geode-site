@@ -1,6 +1,4 @@
 ---
-import FeatureCard from './FeatureCard.astro';
-
 // Curated from the README's "Features (v0.1)" list — the strongest,
 // most concrete features for a landing page grid. Sentences trimmed from
 // the README; no claims added beyond what it documents.
@@ -20,7 +18,7 @@ const features = [
       'Callouts (13 types, foldable), embeds for notes/images/audio/video, highlights, tags, tables, task lists, and YAML properties.',
   },
   {
-    title: 'Knowledge graph plumbing',
+    title: 'Connected notes',
     description:
       'Backlinks pane, outline, tag pane, unresolved-link styling, and link resolution by shortest path and alias.',
   },
@@ -43,17 +41,47 @@ const features = [
 ];
 ---
 
-<section id="features" class="border-y border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface-alt))]/40">
-  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Everything you need for a local-first vault</h2>
-      <p class="mt-4 text-[rgb(var(--color-text-muted))]">
+<section id="features" class="geode-features">
+  <div class="geode-section-inner">
+    <div class="geode-feature-heading">
+      <div>
+        <div class="landing-eyebrow">The local-first foundation</div>
+        <h2>Everything you need for a connected vault.</h2>
+      </div>
+      <p>
         The core loop works today: vaults, editing, wikilinks, backlinks, search, tags, and reading view.
       </p>
     </div>
 
-    <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {features.map((feature) => <FeatureCard title={feature.title} description={feature.description} />)}
+    <div class="geode-feature-layout">
+      <article class="geode-vault-panel">
+        <div class="geode-vault-crystal" aria-hidden="true">◇</div>
+        <p class="geode-panel-kicker">Your vault, on your disk</p>
+        <h3>Plain files.<br /><em>Lasting ownership.</em></h3>
+        <div class="geode-file-stack" aria-hidden="true">
+          <div class="geode-folder"><span>◇</span> Field Notes</div>
+          <div class="geode-disk-file is-active"><span>MD</span> Garden plans.md</div>
+          <div class="geode-disk-file"><span>MD</span> Seed catalog.md</div>
+          <div class="geode-disk-file"><span>MD</span> September journal.md</div>
+        </div>
+        <p class="geode-panel-note">
+          Open any folder. Edit anywhere. Geode notices external changes without an import step.
+        </p>
+      </article>
+
+      <div class="geode-feature-index">
+        {
+          features.map((feature, index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>

@@ -8,16 +8,17 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  landing?: boolean;
 }
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage, landing = false } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const defaultDescription =
-  'Geode is an open-source, local-first Markdown knowledge base — a clean-room clone of Obsidian. Your notes stay plain Markdown files on your disk. No account, no cloud, no lock-in.';
+  'Geode is an open-source, local-first Markdown knowledge base. Your notes remain plain Markdown files on your disk.';
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,11 +29,13 @@ const defaultDescription =
     />
     <SEO title={title} description={description || defaultDescription} canonicalUrl={canonicalUrl} ogImage={ogImage} />
   </head>
-  <body class="bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] antialiased">
-    <Nav />
-    <main>
+  <body class:list={['bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] antialiased', { 'landing-page': landing }]}>
+    {!landing && <Nav />}
+    {landing && <slot name="header" />}
+    <main class:list={{ 'landing-main': landing }}>
       <slot />
     </main>
-    <Footer />
+    {landing && <slot name="footer" />}
+    {!landing && <Footer />}
   </body>
 </html>

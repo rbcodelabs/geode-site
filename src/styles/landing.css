@@ -1,0 +1,1451 @@
+body.landing-page {
+  background: #f7f7f2;
+  color: #232921;
+  font: 15px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.landing-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.landing-page :focus-visible {
+  outline: 3px solid #789348;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.landing-header,
+.landing-main,
+.landing-footer {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.landing-header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.landing-brand {
+  display: inline-flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+
+.landing-logo {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  place-items: center;
+  border-radius: 10px;
+  background: #2a4939;
+  color: #dbea9d;
+}
+
+.landing-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 13px;
+}
+
+.landing-nav > a:not(.landing-btn):hover,
+.landing-footer a:hover,
+.landing-hosts a:hover {
+  color: #294835;
+}
+
+.landing-btn {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  padding: 11px 21px;
+  border: 1px solid #294835;
+  border-radius: 7px;
+  background: #294835;
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.landing-btn:hover {
+  background: #1f382a;
+  border-color: #1f382a;
+  transform: translateY(-1px);
+}
+
+.landing-btn-secondary {
+  border-color: #cbd1c7;
+  background: transparent;
+  color: #294835 !important;
+}
+
+.landing-btn-secondary:hover {
+  border-color: #8c9b86;
+  background: #eef1e9;
+}
+
+.landing-hero {
+  padding-top: 65px;
+  text-align: center;
+}
+
+.landing-eyebrow {
+  color: #57735a;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.landing-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: #789348;
+  vertical-align: 1px;
+}
+
+.landing-hero h1 {
+  max-width: 880px;
+  margin: 23px auto;
+  color: #232921;
+  font-size: clamp(42px, 6.3vw, 78px);
+  font-weight: 550;
+  letter-spacing: -4px;
+  line-height: 1.08;
+}
+
+.landing-hero h1 em {
+  color: #637a50;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+}
+
+.landing-lead {
+  max-width: 510px;
+  margin: 0 auto 26px;
+  color: #62695f;
+  font-size: 16px;
+}
+
+.landing-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.landing-hosts {
+  margin: 18px 0 40px;
+  color: #6e7569;
+  font-size: 11px;
+}
+
+.landing-hosts a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.landing-stage {
+  position: relative;
+  margin: 0;
+  padding: 28px 28px 0;
+  border: 1px solid #d6dece;
+  border-radius: 14px 14px 0 0;
+  background: #e6ebdf;
+}
+
+.landing-app {
+  overflow: hidden;
+  border: 1px solid #cbd3c4;
+  border-radius: 9px 9px 0 0;
+  background: #fff;
+  box-shadow: 0 16px 50px rgba(38, 61, 36, 0.06);
+  text-align: left;
+}
+
+.landing-app-bar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 18px;
+  border-bottom: 1px solid #e6e9e2;
+  background: #fbfcf9;
+  color: #7d8575;
+  font-size: 10px;
+}
+
+.landing-window-lights {
+  color: #b5beb0;
+  letter-spacing: 5px;
+  white-space: nowrap;
+}
+
+.landing-workspace {
+  min-height: 390px;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) 255px;
+}
+
+.landing-vault {
+  padding: 23px 18px;
+  border-right: 1px solid #e8ebe4;
+  background: #fafbf7;
+  color: #6f7967;
+  font-size: 11px;
+}
+
+.landing-smallcap {
+  margin-bottom: 18px;
+  color: #7b8674;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.landing-file {
+  padding: 7px 0;
+}
+
+.landing-file.is-active {
+  color: #30482d;
+  font-weight: 700;
+}
+
+.landing-vault-spacer {
+  height: 18px;
+}
+
+.landing-chat {
+  min-width: 0;
+  padding: 24px 30px;
+}
+
+.landing-tabline {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #e9ece5;
+  color: #687260;
+  font-size: 11px;
+}
+
+.landing-pill,
+.landing-ready {
+  display: inline-block;
+  flex: none;
+  padding: 3px 7px;
+  border-radius: 4px;
+  background: #e8f0d9;
+  color: #526b34;
+  font-size: 9px;
+}
+
+.landing-message {
+  max-width: 390px;
+  margin: 22px 0;
+  padding: 13px 16px;
+  border-radius: 8px;
+  background: #f2f3ec;
+  font-size: 12px;
+}
+
+.landing-answer {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.landing-answer strong {
+  font-size: 13px;
+}
+
+.landing-answer p {
+  margin: 0.75em 0;
+}
+
+.landing-result,
+.landing-composer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+}
+
+.landing-result {
+  margin-top: 17px;
+  padding: 13px;
+  border: 1px solid #dce4d2;
+  border-radius: 6px;
+  background: #fafcf6;
+}
+
+.landing-composer {
+  margin-top: 26px;
+  padding: 12px 14px;
+  border: 1px solid #dce1d5;
+  border-radius: 7px;
+  color: #8f9789;
+}
+
+.landing-agents {
+  padding: 24px 17px;
+  border-left: 1px solid #e4e9dd;
+  background: #fcfdf9;
+}
+
+.landing-agents-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing-agent {
+  margin-bottom: 10px;
+  padding: 13px 10px;
+  border: 1px solid #e2e8da;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.landing-agent.is-selected {
+  border-color: #a6b994;
+  background: #f4f8ed;
+}
+
+.landing-agent strong,
+.landing-agent small {
+  display: block;
+}
+
+.landing-agent strong {
+  font-size: 11px;
+}
+
+.landing-agent small {
+  color: #747e6d;
+  font-size: 9px;
+}
+
+.landing-progress {
+  height: 3px;
+  margin-top: 12px;
+  background: #e8eee0;
+}
+
+.landing-progress span {
+  display: block;
+  width: 65%;
+  height: 3px;
+  background: #8ca165;
+}
+
+.landing-state {
+  margin-top: 6px;
+  color: #678644;
+  font-size: 9px;
+}
+
+.landing-state.is-waiting,
+.landing-waiting {
+  color: #9a702b;
+}
+
+.landing-stage-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 5px;
+  color: #68785e;
+  font-size: 10px;
+}
+
+.landing-benefit-strip {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  padding: 29px 0;
+  border-bottom: 1px solid #dfe3d8;
+  color: #5f6c55;
+  font-size: 11px;
+}
+
+.landing-section {
+  padding: 90px 0;
+}
+
+.landing-section h2,
+.landing-detail h2,
+.landing-closing h2 {
+  color: inherit;
+}
+
+.landing-section h2 {
+  margin: 16px 0;
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -1.8px;
+  line-height: 1.2;
+}
+
+.landing-section-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 35px;
+}
+
+.landing-section-intro > p {
+  max-width: 330px;
+  margin: 0 0 16px;
+  color: #6e7569;
+  font-size: 13px;
+}
+
+.landing-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.landing-step {
+  padding-top: 17px;
+  border-top: 1px solid #cdd6c3;
+}
+
+.landing-number {
+  color: #7d9066;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.landing-step h3 {
+  margin: 8px 0;
+  color: #232921;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.landing-step > p {
+  max-width: 280px;
+  margin: 0;
+  color: #6e7569;
+  font-size: 12px;
+}
+
+.landing-mini {
+  height: 176px;
+  margin-top: 22px;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  background: #edf0e7;
+}
+
+.landing-mini-card {
+  padding: 12px;
+  border: 1px solid #dce2d4;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(42, 68, 32, 0.03);
+  font-size: 10px;
+}
+
+.landing-mini-card .landing-smallcap {
+  margin-bottom: 9px;
+}
+
+.landing-mini-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 7px 0;
+}
+
+.landing-mini-row-final {
+  margin-top: 14px;
+}
+
+.landing-tag {
+  display: inline-block;
+  margin: 7px 3px 0 0;
+  padding: 4px 7px;
+  border-radius: 4px;
+  background: #e2eacb;
+  font-size: 9px;
+}
+
+.landing-working {
+  color: #6e8a45;
+}
+
+.landing-mini-summary {
+  margin: 10px 0;
+  color: #7a8372;
+}
+
+.landing-mini-link {
+  padding-top: 8px;
+  border-top: 1px solid #e7ebdf;
+  color: #526d40;
+}
+
+.landing-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 65px;
+  padding: 48px;
+  border-radius: 12px;
+  background: #263f32;
+  color: #f0f3e9;
+}
+
+.landing-detail .landing-eyebrow {
+  color: #b8ce9b;
+}
+
+.landing-detail h2 {
+  margin: 10px 0 16px;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.landing-detail > div:first-child > p {
+  color: #bac9b8;
+  font-size: 13px;
+}
+
+.landing-detail-link {
+  display: inline-block;
+  margin-top: 17px;
+  color: #d4e7a5 !important;
+  font-size: 12px;
+}
+
+.landing-detail-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.landing-paper {
+  padding: 26px;
+  border-radius: 7px;
+  background: #f7f8ef;
+  box-shadow: 0 12px 35px rgba(16, 31, 36, 0.38);
+  color: #35452d;
+  font-size: 11px;
+  transform: rotate(-2deg);
+}
+
+.landing-paper h3 {
+  margin: 12px 0;
+  color: inherit;
+  font: 25px Georgia, 'Times New Roman', serif;
+}
+
+.landing-paper p {
+  color: #69765e;
+  font-size: 11px;
+}
+
+.landing-paper hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #d9dfcd;
+}
+
+.landing-paper-line {
+  height: 5px;
+  margin: 9px 0;
+  border-radius: 2px;
+  background: #dfe4d5;
+}
+
+.landing-paper-line.is-medium {
+  width: 87%;
+}
+
+.landing-paper-line.is-short {
+  width: 65%;
+}
+
+.landing-closing {
+  padding: 90px 0;
+  text-align: center;
+}
+
+.landing-closing > .landing-eyebrow {
+  margin-bottom: 20px;
+}
+
+.landing-closing h2 {
+  margin: 0 0 15px;
+  font: 42px/1.2 Georgia, 'Times New Roman', serif;
+  letter-spacing: -1px;
+}
+
+.landing-closing > p:not(.landing-hosts) {
+  margin-bottom: 25px;
+  color: #6e7569;
+  font-size: 13px;
+}
+
+.landing-closing .landing-hosts {
+  margin-bottom: 0;
+}
+
+.landing-footer {
+  min-height: 78px;
+  padding-top: 24px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid #dfe3d8;
+  color: #6e7569;
+  font-size: 11px;
+}
+
+.landing-footer-brand {
+  gap: 7px;
+  color: #232921 !important;
+  font-size: 14px;
+}
+
+.landing-footer-crystal {
+  width: 23px;
+  height: 23px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 7px;
+  background: #294835;
+  color: #dbea9d;
+}
+
+.landing-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+}
+
+@media (max-width: 800px) {
+  .landing-header,
+  .landing-main,
+  .landing-footer {
+    padding-inline: 20px;
+  }
+
+  .landing-nav > a:not(.landing-btn) {
+    display: none;
+  }
+
+  .landing-hero {
+    padding-top: 35px;
+  }
+
+  .landing-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .landing-stage {
+    padding: 12px 12px 0;
+  }
+
+  .landing-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .landing-vault {
+    display: none;
+  }
+
+  .landing-agents {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    border-top: 1px solid #e3e7db;
+    border-left: 0;
+  }
+
+  .landing-agents-heading {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .landing-agent {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .landing-agent:last-child {
+    display: none;
+  }
+
+  .landing-chat {
+    padding: 20px;
+  }
+
+  .landing-benefit-strip {
+    flex-wrap: wrap;
+    gap: 15px 28px;
+  }
+
+  .landing-section {
+    padding: 60px 0;
+  }
+
+  .landing-section h2 {
+    font-size: 34px;
+  }
+
+  .landing-section-intro {
+    display: block;
+  }
+
+  .landing-section-intro > p {
+    max-width: 520px;
+  }
+
+  .landing-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .landing-step > p {
+    max-width: none;
+  }
+
+  .landing-mini {
+    margin-top: 15px;
+  }
+
+  .landing-detail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+    padding: 28px;
+  }
+
+  .landing-stage-caption span:last-child {
+    display: inline;
+  }
+
+  .landing-stage-caption {
+    flex-wrap: wrap;
+  }
+
+  .landing-closing {
+    padding: 60px 0;
+  }
+
+  .landing-closing h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 560px) {
+  .landing-header {
+    height: 82px;
+  }
+
+  .landing-nav .landing-btn {
+    padding-inline: 13px;
+  }
+
+  .landing-actions {
+    max-width: 320px;
+    margin-inline: auto;
+    flex-direction: column;
+  }
+
+  .landing-actions .landing-btn {
+    width: 100%;
+  }
+
+  .landing-app-bar {
+    padding-inline: 12px;
+  }
+
+  .landing-window-lights {
+    display: none;
+  }
+
+  .landing-tabline {
+    flex-wrap: wrap;
+  }
+
+  .landing-result {
+    flex-direction: column;
+  }
+
+  .landing-agents {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .landing-paper {
+    transform: none;
+  }
+
+  .landing-footer {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Geode product illustration and landing sections */
+.geode-editor h2 {
+  margin: 18px 0 12px;
+  color: #2d3d29;
+  font: 25px/1.2 Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.5px;
+}
+
+.geode-editor h3 {
+  margin: 16px 0 6px;
+  color: #35452d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.geode-editor p,
+.geode-editor li {
+  color: #4f5d49;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.geode-editor ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.geode-editor blockquote {
+  margin: 14px 0;
+  padding: 9px 11px;
+  border-left: 3px solid #8da66c;
+  background: #f1f5e9;
+  color: #58674f;
+  font-size: 10px;
+}
+
+.geode-note-meta {
+  margin-top: 15px;
+  color: #87927e;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.geode-wikilink {
+  color: #456c3d;
+  text-decoration: underline;
+  text-decoration-color: #a8ba92;
+  text-underline-offset: 2px;
+}
+
+.geode-mini-graph {
+  position: relative;
+  height: 92px;
+  margin-top: 18px;
+  border: 1px solid #e1e7da;
+  border-radius: 7px;
+  background: #f7f9f3;
+}
+
+.geode-mini-graph .node {
+  position: absolute;
+  z-index: 2;
+  width: 11px;
+  height: 11px;
+  border: 3px solid #dce7cb;
+  border-radius: 999px;
+  background: #718b54;
+}
+
+.geode-mini-graph .node-a { top: 18px; left: 26px; }
+.geode-mini-graph .node-b { top: 55px; left: 88px; }
+.geode-mini-graph .node-c { top: 22px; right: 28px; }
+
+.geode-mini-graph .edge {
+  position: absolute;
+  z-index: 1;
+  height: 1px;
+  background: #b7c5a7;
+  transform-origin: left center;
+}
+
+.geode-mini-graph .edge-a { width: 74px; top: 30px; left: 35px; transform: rotate(28deg); }
+.geode-mini-graph .edge-b { width: 65px; top: 60px; left: 96px; transform: rotate(-27deg); }
+
+.geode-folder-card,
+.geode-markdown-card,
+.geode-backlink-card {
+  line-height: 1.8;
+}
+
+.geode-mini-indent {
+  padding-left: 13px;
+  color: #526349;
+}
+
+.geode-markdown-card p {
+  margin: 6px 0 10px;
+  color: #6f7969;
+}
+
+.geode-features {
+  padding: 92px 0;
+  border-block: 1px solid #d9e0d2;
+  background: #f0f3ea;
+}
+
+.geode-section-inner {
+  width: 100%;
+  max-width: 1116px;
+  margin-inline: auto;
+}
+
+.geode-feature-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  align-items: end;
+  gap: 70px;
+  margin-bottom: 46px;
+}
+
+.geode-feature-heading h2,
+.geode-install h2 {
+  margin: 14px 0 0;
+  font-size: clamp(40px, 4.5vw, 56px);
+  font-weight: 500;
+  letter-spacing: -2.4px;
+  line-height: 1.06;
+}
+
+.geode-feature-heading > p {
+  margin: 0 0 4px;
+  color: #697166;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.geode-feature-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.84fr) minmax(0, 1.56fr);
+  gap: 14px;
+}
+
+.geode-vault-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 548px;
+  padding: 38px;
+  border-radius: 12px;
+  background: #294835;
+  color: #f4f5ea;
+}
+
+.geode-vault-crystal {
+  position: absolute;
+  top: -56px;
+  right: -30px;
+  color: rgba(219, 234, 157, 0.09);
+  font: 190px/1 Georgia, 'Times New Roman', serif;
+  transform: rotate(12deg);
+}
+
+.geode-panel-kicker,
+.geode-install-label {
+  margin: 0;
+  color: #b8ca9f;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.geode-vault-panel h3 {
+  position: relative;
+  margin: 17px 0 35px;
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+
+.geode-vault-panel h3 em {
+  color: #dbea9d;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+}
+
+.geode-file-stack {
+  position: relative;
+  padding: 12px;
+  border: 1px solid #58705f;
+  border-radius: 8px;
+  background: #203b2e;
+}
+
+.geode-folder,
+.geode-disk-file {
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  font-size: 11px;
+}
+
+.geode-folder {
+  border-bottom: 1px solid #486250;
+  color: #dfe8d8;
+  font-weight: 700;
+}
+
+.geode-disk-file {
+  margin-top: 5px;
+  color: #aebcac;
+}
+
+.geode-disk-file span {
+  color: #dbea9d;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.geode-disk-file.is-active {
+  border-radius: 5px;
+  background: #385642;
+  color: #fff;
+}
+
+.geode-panel-note {
+  margin: 27px 0 0;
+  color: #b8c6b6;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.geode-feature-index {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid #d8dfd2;
+  border-radius: 12px;
+  background: #fbfcf8;
+}
+
+.geode-feature-index article {
+  min-width: 0;
+  display: flex;
+  gap: 17px;
+  padding: 25px 24px;
+  border-bottom: 1px solid #e1e5dc;
+}
+
+.geode-feature-index article:nth-child(odd) {
+  border-right: 1px solid #e1e5dc;
+}
+
+.geode-feature-index article:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.geode-feature-index article > span {
+  flex: none;
+  color: #8ca165;
+  font: italic 17px/1.2 Georgia, 'Times New Roman', serif;
+}
+
+.geode-feature-index h3 {
+  margin: 0 0 7px;
+  color: #30482d;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.geode-feature-index p {
+  margin: 0;
+  color: #697166;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.geode-install {
+  margin-top: 82px;
+  padding: 72px 64px 32px;
+  border-radius: 14px 14px 0 0;
+  background: #263f32;
+  color: #f2f4ea;
+}
+
+.geode-install .landing-eyebrow {
+  color: #b8ce9b;
+}
+
+.geode-install-primary {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1.14fr);
+  gap: 62px;
+  align-items: start;
+}
+
+.geode-install h2 {
+  color: inherit;
+}
+
+.geode-install-lead > p {
+  max-width: 430px;
+  margin: 20px 0 0;
+  color: #bdc9ba;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.geode-release-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 27px;
+  padding: 12px 18px;
+  border-radius: 7px;
+  background: #dbea9d;
+  color: #253e30 !important;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.geode-release-link:hover {
+  background: #e7f4b2;
+  transform: translateY(-1px);
+}
+
+.geode-release-facts {
+  margin: 42px 0 0;
+  border-top: 1px solid #53685c;
+}
+
+.geode-release-facts > div {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #53685c;
+  font-size: 10px;
+}
+
+.geode-release-facts dt {
+  color: #91a293;
+}
+
+.geode-release-facts dd {
+  margin: 0;
+  color: #e3e9df;
+}
+
+.geode-install-card {
+  padding: 34px;
+  border-radius: 12px;
+  background: #f8f8f1;
+  color: #293529;
+  box-shadow: 0 18px 48px rgba(15, 29, 22, 0.2);
+}
+
+.geode-install-card .geode-install-label {
+  color: #6b8654;
+}
+
+.geode-install-list {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.geode-install-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 21px 0;
+  border-top: 1px solid #dde2d7;
+}
+
+.geode-install-list li:last-child {
+  padding-bottom: 4px;
+}
+
+.geode-install-list li > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.geode-install-list strong {
+  display: block;
+  color: #303a2e;
+  font-size: 13px;
+}
+
+.geode-install-list p {
+  margin: 5px 0 0;
+  color: #697166;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.geode-step-marker {
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  border-radius: 999px;
+  background: #294835;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.geode-gatekeeper {
+  margin-top: 50px;
+  padding: 29px 32px;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.7fr) minmax(0, 1.3fr);
+  gap: 48px;
+  border: 1px solid #586e60;
+  border-radius: 10px;
+}
+
+.geode-gatekeeper h3 {
+  margin: 8px 0;
+  color: #f2f4ea;
+  font-size: 20px;
+  font-weight: 550;
+  letter-spacing: -0.4px;
+}
+
+.geode-gatekeeper-copy > p {
+  margin: 0;
+  color: #b9c6b8;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.geode-open-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.geode-open-options > div {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.geode-open-options > div > div {
+  min-width: 0;
+}
+
+.geode-option-marker {
+  width: 24px;
+  height: 24px;
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  border: 1px solid #74887b;
+  border-radius: 999px;
+  color: #dbea9d;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.geode-open-options p {
+  margin: 1px 0 0;
+  color: #b9c6b8;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.geode-open-options strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #f2f4ea;
+  font-size: 11px;
+}
+
+.geode-command {
+  min-width: 0;
+  margin-top: 9px;
+}
+
+.geode-command .card {
+  width: 100%;
+  overflow: hidden;
+  border-color: #53685c;
+  background: #1c3428;
+}
+
+.geode-command .copy-code-block {
+  min-width: 0;
+  padding: 9px 10px;
+}
+
+.geode-command code {
+  min-width: 0;
+  flex: 1;
+  color: #dbea9d !important;
+  font-size: 9px !important;
+}
+
+.geode-command .copy-code-button {
+  border-color: #667a6e;
+  color: #c7d2c4;
+  font-size: 9px;
+}
+
+.geode-platform-note {
+  margin: 18px 0 0;
+  color: #9fb0a0;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.geode-platform-note strong {
+  margin-right: 7px;
+  color: #dbea9d;
+}
+
+@media (max-width: 960px) {
+  .geode-feature-layout {
+    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+  }
+
+  .geode-feature-index {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .geode-feature-index article,
+  .geode-feature-index article:nth-child(odd),
+  .geode-feature-index article:nth-last-child(-n + 2) {
+    border-right: 0;
+    border-bottom: 1px solid #e1e5dc;
+  }
+
+  .geode-feature-index article:last-child {
+    border-bottom: 0;
+  }
+
+  .geode-vault-panel {
+    min-height: auto;
+  }
+
+  .geode-install {
+    padding-inline: 42px;
+  }
+
+  .geode-install-primary {
+    gap: 42px;
+  }
+
+  .geode-gatekeeper {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  .geode-mini-graph {
+    display: none;
+  }
+
+  .geode-features {
+    padding: 64px 0;
+  }
+
+  .geode-feature-heading,
+  .geode-feature-layout,
+  .geode-install-primary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .geode-feature-heading {
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+
+  .geode-feature-heading > p {
+    max-width: 560px;
+  }
+
+  .geode-install {
+    margin-top: 60px;
+    padding: 60px 30px 30px;
+  }
+
+  .geode-install-primary {
+    gap: 40px;
+  }
+
+  .geode-release-facts {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 560px) {
+  .geode-feature-heading h2,
+  .geode-install h2 {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+  }
+
+  .geode-vault-panel,
+  .geode-install-card {
+    padding: 28px 24px;
+  }
+
+  .geode-vault-panel h3 {
+    font-size: 31px;
+  }
+
+  .geode-feature-index article {
+    padding: 22px 20px;
+  }
+
+  .geode-install {
+    margin-inline: -4px;
+    padding-inline: 22px;
+  }
+
+  .geode-gatekeeper {
+    padding: 25px 22px;
+  }
+
+  .geode-open-options {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
