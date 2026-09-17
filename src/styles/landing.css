@@ -917,16 +917,10 @@ body.landing-page {
   color: #6f7969;
 }
 
-.geode-features,
-.geode-install {
-  padding: 82px 0;
+.geode-features {
+  padding: 92px 0;
   border-block: 1px solid #d9e0d2;
   background: #f0f3ea;
-}
-
-.geode-install {
-  margin-top: 82px;
-  border-radius: 12px 12px 0 0;
 }
 
 .geode-section-inner {
@@ -935,89 +929,258 @@ body.landing-page {
   margin-inline: auto;
 }
 
-.geode-section-heading {
-  max-width: 660px;
+.geode-feature-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  align-items: end;
+  gap: 70px;
+  margin-bottom: 46px;
 }
 
-.geode-section-heading h2 {
-  margin: 14px 0 13px;
-  color: #232921;
-  font-size: 40px;
+.geode-feature-heading h2,
+.geode-install h2 {
+  margin: 14px 0 0;
+  font-size: clamp(40px, 4.5vw, 56px);
   font-weight: 500;
-  letter-spacing: -1.6px;
-  line-height: 1.15;
+  letter-spacing: -2.4px;
+  line-height: 1.06;
 }
 
-.geode-section-heading > p {
-  margin: 0;
+.geode-feature-heading > p {
+  margin: 0 0 4px;
   color: #697166;
   font-size: 14px;
   line-height: 1.75;
 }
 
-.geode-section-heading a {
-  color: #294835;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.geode-feature-grid {
-  margin-top: 42px;
+.geode-feature-layout {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: minmax(300px, 0.84fr) minmax(0, 1.56fr);
   gap: 14px;
 }
 
-.geode-feature-card {
-  min-width: 0;
-  padding: 22px;
-  box-shadow: 0 7px 20px rgba(38, 61, 36, 0.03);
+.geode-vault-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 548px;
+  padding: 38px;
+  border-radius: 12px;
+  background: #294835;
+  color: #f4f5ea;
 }
 
-.geode-feature-card h3 {
+.geode-vault-crystal {
+  position: absolute;
+  top: -56px;
+  right: -30px;
+  color: rgba(219, 234, 157, 0.09);
+  font: 190px/1 Georgia, 'Times New Roman', serif;
+  transform: rotate(12deg);
+}
+
+.geode-panel-kicker,
+.geode-install-label {
   margin: 0;
-  color: #30482d;
-  font-size: 15px;
-  font-weight: 650;
+  color: #b8ca9f;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
 }
 
-.geode-feature-card p {
-  margin: 8px 0 0;
-  color: #697166;
+.geode-vault-panel h3 {
+  position: relative;
+  margin: 17px 0 35px;
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+
+.geode-vault-panel h3 em {
+  color: #dbea9d;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+}
+
+.geode-file-stack {
+  position: relative;
+  padding: 12px;
+  border: 1px solid #58705f;
+  border-radius: 8px;
+  background: #203b2e;
+}
+
+.geode-folder,
+.geode-disk-file {
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  font-size: 11px;
+}
+
+.geode-folder {
+  border-bottom: 1px solid #486250;
+  color: #dfe8d8;
+  font-weight: 700;
+}
+
+.geode-disk-file {
+  margin-top: 5px;
+  color: #aebcac;
+}
+
+.geode-disk-file span {
+  color: #dbea9d;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.geode-disk-file.is-active {
+  border-radius: 5px;
+  background: #385642;
+  color: #fff;
+}
+
+.geode-panel-note {
+  margin: 27px 0 0;
+  color: #b8c6b6;
   font-size: 12px;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
-.geode-platform-note {
-  margin-top: 13px !important;
-  padding: 12px 15px;
-  border-left: 3px solid #8ca165;
-  background: rgba(255, 255, 255, 0.55);
-  font-size: 12px !important;
-}
-
-.geode-install-grid {
-  margin-top: 44px;
+.geode-feature-index {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 56px;
+  overflow: hidden;
+  border: 1px solid #d8dfd2;
+  border-radius: 12px;
+  background: #fbfcf8;
 }
 
-.geode-install-grid h3 {
-  margin: 0;
+.geode-feature-index article {
+  min-width: 0;
+  display: flex;
+  gap: 17px;
+  padding: 25px 24px;
+  border-bottom: 1px solid #e1e5dc;
+}
+
+.geode-feature-index article:nth-child(odd) {
+  border-right: 1px solid #e1e5dc;
+}
+
+.geode-feature-index article:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.geode-feature-index article > span {
+  flex: none;
+  color: #8ca165;
+  font: italic 17px/1.2 Georgia, 'Times New Roman', serif;
+}
+
+.geode-feature-index h3 {
+  margin: 0 0 7px;
   color: #30482d;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 650;
 }
 
-.geode-install-intro {
-  margin: 10px 0 0;
+.geode-feature-index p {
+  margin: 0;
   color: #697166;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.geode-install {
+  margin-top: 82px;
+  padding: 72px 64px 32px;
+  border-radius: 14px 14px 0 0;
+  background: #263f32;
+  color: #f2f4ea;
+}
+
+.geode-install .landing-eyebrow {
+  color: #b8ce9b;
+}
+
+.geode-install-primary {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1.14fr);
+  gap: 62px;
+  align-items: start;
+}
+
+.geode-install h2 {
+  color: inherit;
+}
+
+.geode-install-lead > p {
+  max-width: 430px;
+  margin: 20px 0 0;
+  color: #bdc9ba;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.geode-release-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 27px;
+  padding: 12px 18px;
+  border-radius: 7px;
+  background: #dbea9d;
+  color: #253e30 !important;
   font-size: 12px;
+  font-weight: 700;
+}
+
+.geode-release-link:hover {
+  background: #e7f4b2;
+  transform: translateY(-1px);
+}
+
+.geode-release-facts {
+  margin: 42px 0 0;
+  border-top: 1px solid #53685c;
+}
+
+.geode-release-facts > div {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #53685c;
+  font-size: 10px;
+}
+
+.geode-release-facts dt {
+  color: #91a293;
+}
+
+.geode-release-facts dd {
+  margin: 0;
+  color: #e3e9df;
+}
+
+.geode-install-card {
+  padding: 34px;
+  border-radius: 12px;
+  background: #f8f8f1;
+  color: #293529;
+  box-shadow: 0 18px 48px rgba(15, 29, 22, 0.2);
+}
+
+.geode-install-card .geode-install-label {
+  color: #6b8654;
 }
 
 .geode-install-list {
-  margin: 22px 0 0;
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -1025,11 +1188,13 @@ body.landing-page {
 .geode-install-list li {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 16px;
+  padding: 21px 0;
+  border-top: 1px solid #dde2d7;
 }
 
-.geode-install-list li + li {
-  margin-top: 20px;
+.geode-install-list li:last-child {
+  padding-bottom: 4px;
 }
 
 .geode-install-list li > div {
@@ -1044,43 +1209,171 @@ body.landing-page {
 }
 
 .geode-install-list p {
-  margin: 4px 0 0;
+  margin: 5px 0 0;
   color: #697166;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.65;
 }
 
 .geode-step-marker {
-  width: 27px;
-  height: 27px;
+  width: 28px;
+  height: 28px;
   display: inline-grid;
   flex: none;
   place-items: center;
   border-radius: 999px;
   background: #294835;
   color: #fff;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
 }
 
-.geode-step-marker.is-secondary {
-  border: 1px solid #b9c5af;
-  background: #fff;
-  color: #294835;
+.geode-gatekeeper {
+  margin-top: 50px;
+  padding: 29px 32px;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.7fr) minmax(0, 1.3fr);
+  gap: 48px;
+  border: 1px solid #586e60;
+  border-radius: 10px;
+}
+
+.geode-gatekeeper h3 {
+  margin: 8px 0;
+  color: #f2f4ea;
+  font-size: 20px;
+  font-weight: 550;
+  letter-spacing: -0.4px;
+}
+
+.geode-gatekeeper-copy > p {
+  margin: 0;
+  color: #b9c6b8;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.geode-open-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.geode-open-options > div {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.geode-open-options > div > div {
+  min-width: 0;
+}
+
+.geode-option-marker {
+  width: 24px;
+  height: 24px;
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  border: 1px solid #74887b;
+  border-radius: 999px;
+  color: #dbea9d;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.geode-open-options p {
+  margin: 1px 0 0;
+  color: #b9c6b8;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.geode-open-options strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #f2f4ea;
+  font-size: 11px;
 }
 
 .geode-command {
-  margin-top: 11px;
+  min-width: 0;
+  margin-top: 9px;
 }
 
-@media (max-width: 900px) {
-  .geode-feature-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.geode-command .card {
+  width: 100%;
+  overflow: hidden;
+  border-color: #53685c;
+  background: #1c3428;
+}
+
+.geode-command .copy-code-block {
+  min-width: 0;
+  padding: 9px 10px;
+}
+
+.geode-command code {
+  min-width: 0;
+  flex: 1;
+  color: #dbea9d !important;
+  font-size: 9px !important;
+}
+
+.geode-command .copy-code-button {
+  border-color: #667a6e;
+  color: #c7d2c4;
+  font-size: 9px;
+}
+
+.geode-platform-note {
+  margin: 18px 0 0;
+  color: #9fb0a0;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.geode-platform-note strong {
+  margin-right: 7px;
+  color: #dbea9d;
+}
+
+@media (max-width: 960px) {
+  .geode-feature-layout {
+    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
   }
 
-  .geode-install-grid {
+  .geode-feature-index {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .geode-feature-index article,
+  .geode-feature-index article:nth-child(odd),
+  .geode-feature-index article:nth-last-child(-n + 2) {
+    border-right: 0;
+    border-bottom: 1px solid #e1e5dc;
+  }
+
+  .geode-feature-index article:last-child {
+    border-bottom: 0;
+  }
+
+  .geode-vault-panel {
+    min-height: auto;
+  }
+
+  .geode-install {
+    padding-inline: 42px;
+  }
+
+  .geode-install-primary {
     gap: 42px;
+  }
+
+  .geode-gatekeeper {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
 }
 
@@ -1089,22 +1382,70 @@ body.landing-page {
     display: none;
   }
 
-  .geode-features,
-  .geode-install {
-    padding: 60px 0;
+  .geode-features {
+    padding: 64px 0;
+  }
+
+  .geode-feature-heading,
+  .geode-feature-layout,
+  .geode-install-primary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .geode-feature-heading {
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+
+  .geode-feature-heading > p {
+    max-width: 560px;
   }
 
   .geode-install {
     margin-top: 60px;
+    padding: 60px 30px 30px;
+  }
+
+  .geode-install-primary {
+    gap: 40px;
+  }
+
+  .geode-release-facts {
+    max-width: 480px;
   }
 }
 
 @media (max-width: 560px) {
-  .geode-section-heading h2 {
-    font-size: 34px;
+  .geode-feature-heading h2,
+  .geode-install h2 {
+    font-size: 36px;
+    letter-spacing: -1.5px;
   }
 
-  .geode-feature-grid {
+  .geode-vault-panel,
+  .geode-install-card {
+    padding: 28px 24px;
+  }
+
+  .geode-vault-panel h3 {
+    font-size: 31px;
+  }
+
+  .geode-feature-index article {
+    padding: 22px 20px;
+  }
+
+  .geode-install {
+    margin-inline: -4px;
+    padding-inline: 22px;
+  }
+
+  .geode-gatekeeper {
+    padding: 25px 22px;
+  }
+
+  .geode-open-options {
     grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
 }

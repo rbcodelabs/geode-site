@@ -23,24 +23,25 @@ const installSteps = [
 
 <section id="install" class="geode-install" aria-labelledby="install-title">
   <div class="geode-section-inner">
-    <div class="geode-section-heading">
-      <div class="landing-eyebrow">Install Geode</div>
-      <h2 id="install-title">Your vault is a download away.</h2>
-      <p>
-        Prebuilt macOS installers for Apple Silicon and Intel are published on the
-        <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer">Releases page</a>
-        whenever a version tag is pushed. Windows and Linux builds aren't set up yet.
-      </p>
-      <p class="geode-platform-note">
-        The iOS managed-vault MVP has passed native and UI automation plus physical-device validation for vault
-        discovery and opening notes. It is not yet a public iOS release: Files/File Provider-backed vaults,
-        community plugins, and release signing and distribution remain open production gates.
-      </p>
-    </div>
+    <div class="geode-install-primary">
+      <div class="geode-install-lead">
+        <div class="landing-eyebrow">Install Geode</div>
+        <h2 id="install-title">Your vault is a download away.</h2>
+        <p>
+          Prebuilt macOS installers for Apple Silicon and Intel are published whenever a version tag is pushed.
+        </p>
+        <a class="geode-release-link" href={RELEASES_URL} target="_blank" rel="noopener noreferrer">
+          View the latest release <span aria-hidden="true">↗</span>
+        </a>
+        <dl class="geode-release-facts">
+          <div><dt>Platform</dt><dd>macOS</dd></div>
+          <div><dt>Builds</dt><dd>Apple Silicon · Intel</dd></div>
+          <div><dt>Not available</dt><dd>Windows · Linux</dd></div>
+        </dl>
+      </div>
 
-    <div class="geode-install-grid">
-      <div>
-        <h3>Install on macOS</h3>
+      <div class="geode-install-card">
+        <div class="geode-install-label">Install on macOS</div>
         <ol class="geode-install-list">
           {
             installSteps.map((step, i) => (
@@ -55,28 +56,36 @@ const installSteps = [
           }
         </ol>
       </div>
-
-      <div>
-        <h3>Opening an unsigned build</h3>
-        <p class="geode-install-intro">Pick either option. Both only need to be done once per downloaded copy.</p>
-        <ol class="geode-install-list">
-          <li>
-            <span class="geode-step-marker is-secondary">A</span>
-            <div>
-              <strong>Right-click to open</strong>
-              <p>Right-click or Control-click Geode.app → Open → Open again. You can also use System Settings → Privacy &amp; Security → Open Anyway.</p>
-            </div>
-          </li>
-          <li>
-            <span class="geode-step-marker is-secondary">B</span>
-            <div>
-              <strong>Clear the quarantine flag</strong>
-              <p>Run this once in Terminal, then launch normally:</p>
-              <div class="geode-command"><CodeBlock code="xattr -dr com.apple.quarantine /Applications/Geode.app" /></div>
-            </div>
-          </li>
-        </ol>
-      </div>
     </div>
+
+    <aside class="geode-gatekeeper" aria-labelledby="gatekeeper-title">
+      <div class="geode-gatekeeper-copy">
+        <div class="geode-install-label">First launch</div>
+        <h3 id="gatekeeper-title">macOS may ask you to confirm.</h3>
+        <p>
+          Builds are ad-hoc signed and not notarized, so macOS shows an “unidentified developer” warning the first
+          time you open each downloaded copy. Choose either option once.
+        </p>
+      </div>
+      <div class="geode-open-options">
+        <div>
+          <span class="geode-option-marker">A</span>
+          <p><strong>Right-click to open</strong>Right-click or Control-click Geode.app → Open → Open again. You can also use System Settings → Privacy &amp; Security → Open Anyway.</p>
+        </div>
+        <div>
+          <span class="geode-option-marker">B</span>
+          <div>
+            <p><strong>Clear the quarantine flag</strong>Run this once in Terminal, then launch normally:</p>
+            <div class="geode-command"><CodeBlock code="xattr -dr com.apple.quarantine /Applications/Geode.app" /></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <p class="geode-platform-note">
+      <strong>iOS status</strong> The managed-vault MVP has passed native and UI automation plus physical-device validation
+      for vault discovery and opening notes. It is not yet a public iOS release: Files/File Provider-backed vaults,
+      community plugins, and release signing and distribution remain open production gates.
+    </p>
   </div>
 </section>
