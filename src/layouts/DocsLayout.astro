@@ -21,32 +21,35 @@ const nextDoc = currentIndex >= 0 && currentIndex < sorted.length - 1 ? sorted[c
 ---
 
 <Layout title={`${title} — Geode Docs`} description={description}>
-  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:flex lg:items-start lg:gap-12">
+  <div class="docs-layout">
     <DocsSidebar docs={sorted} currentId={currentId} />
 
-    <div class="min-w-0 flex-1">
-      <article class="docs-content max-w-none">
-        <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">{title}</h1>
-        <p class="mt-3 text-base text-[rgb(var(--color-text-muted))]">{description}</p>
-        <div class="mt-8">
+    <div class="docs-article-column">
+      <article class="docs-content">
+        <header class="docs-article-header">
+          <div class="docs-kicker">Geode documentation</div>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </header>
+        <div class="docs-article-body">
           <slot />
         </div>
       </article>
 
-      <nav class="mt-14 flex flex-col gap-3 border-t border-[rgb(var(--color-border))] pt-6 sm:flex-row sm:justify-between" aria-label="Page navigation">
+      <nav class="docs-page-nav" aria-label="Page navigation">
         {
           prevDoc ? (
-            <a href={`/docs/${prevDoc.id}/`} class="card block p-4 text-sm transition-colors hover:border-[rgb(var(--color-primary))] sm:max-w-[48%]">
-              <span class="text-xs text-[rgb(var(--color-text-muted))]">← Previous</span>
-              <div class="mt-1 font-semibold">{prevDoc.data.title}</div>
+            <a href={`/docs/${prevDoc.id}/`} class="card">
+              <span>← Previous</span>
+              <strong>{prevDoc.data.title}</strong>
             </a>
           ) : <span />
         }
         {
           nextDoc ? (
-            <a href={`/docs/${nextDoc.id}/`} class="card block p-4 text-sm transition-colors hover:border-[rgb(var(--color-primary))] sm:ml-auto sm:max-w-[48%] sm:text-right">
-              <span class="text-xs text-[rgb(var(--color-text-muted))]">Next →</span>
-              <div class="mt-1 font-semibold">{nextDoc.data.title}</div>
+            <a href={`/docs/${nextDoc.id}/`} class="card is-next">
+              <span>Next →</span>
+              <strong>{nextDoc.data.title}</strong>
             </a>
           ) : <span />
         }

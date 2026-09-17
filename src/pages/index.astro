@@ -1,18 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import LandingHeader from '../components/LandingHeader.astro';
 import Hero from '../components/Hero.astro';
-import ScreenshotShowcase from '../components/ScreenshotShowcase.astro';
+import GeodeWorkflow from '../components/GeodeWorkflow.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
 import InstallSteps from '../components/InstallSteps.astro';
+import LandingFooter from '../components/LandingFooter.astro';
+import '../styles/landing.css';
 
 const title = 'Geode — a local-first Markdown knowledge base';
 const description =
   'Geode is an open-source, local-first Markdown knowledge base — available on macOS, with a managed-vault iOS MVP validated on iPhone. Your notes remain plain Markdown files.';
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} landing>
+  <LandingHeader slot="header" />
   <Hero />
-  <ScreenshotShowcase />
+  <GeodeWorkflow />
   <FeatureGrid />
   <InstallSteps />
+  <LandingFooter slot="footer" />
 </Layout>

@@ -21,41 +21,34 @@ const installSteps = [
 ];
 ---
 
-<section id="install" class="border-y border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface-alt))]/40">
-  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Installation</h2>
-      <p class="mt-4 text-[rgb(var(--color-text-muted))]">
-        Prebuilt macOS installers (Apple Silicon + Intel) are published on the
-        {' '}
-        <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer" class="text-[rgb(var(--color-secondary))] underline underline-offset-2 hover:text-[rgb(var(--color-primary))]">
-          Releases page
-        </a>
-        {' '}whenever a version tag is pushed. Windows and Linux builds aren't set up yet.
+<section id="install" class="geode-install" aria-labelledby="install-title">
+  <div class="geode-section-inner">
+    <div class="geode-section-heading">
+      <div class="landing-eyebrow">Install Geode</div>
+      <h2 id="install-title">Your vault is a download away.</h2>
+      <p>
+        Prebuilt macOS installers for Apple Silicon and Intel are published on the
+        <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer">Releases page</a>
+        whenever a version tag is pushed. Windows and Linux builds aren't set up yet.
       </p>
-      <p class="mt-4 text-sm leading-relaxed text-[rgb(var(--color-text-muted))]">
+      <p class="geode-platform-note">
         The iOS managed-vault MVP has passed native and UI automation plus physical-device validation for vault
         discovery and opening notes. It is not yet a public iOS release: Files/File Provider-backed vaults,
         community plugins, and release signing and distribution remain open production gates.
       </p>
     </div>
 
-    <div class="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-2">
+    <div class="geode-install-grid">
       <div>
-        <h3 class="text-lg font-bold">Steps</h3>
-        <ol class="mt-6 space-y-5">
+        <h3>Install on macOS</h3>
+        <ol class="geode-install-list">
           {
             installSteps.map((step, i) => (
-              <li class="flex gap-4">
-                <span
-                  class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
-                  style="background: linear-gradient(135deg, #14B8A6, #A855F7);"
-                >
-                  {i + 1}
-                </span>
-                <div class="w-full">
-                  <p class="font-semibold">{step.title}</p>
-                  <p class="mt-1 text-sm text-[rgb(var(--color-text-muted))]">{step.description}</p>
+              <li>
+                <span class="geode-step-marker">{i + 1}</span>
+                <div>
+                  <strong>{step.title}</strong>
+                  <p>{step.description}</p>
                 </div>
               </li>
             ))
@@ -64,35 +57,22 @@ const installSteps = [
       </div>
 
       <div>
-        <h3 class="text-lg font-bold">Opening an unsigned build</h3>
-        <p class="mt-4 text-sm text-[rgb(var(--color-text-muted))]">
-          Pick either option — both only need to be done once per downloaded copy:
-        </p>
-        <ol class="mt-6 space-y-5">
-          <li class="flex gap-4">
-            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[rgb(var(--color-border))] text-sm font-bold text-[rgb(var(--color-text))]">
-              A
-            </span>
-            <div class="w-full">
-              <p class="font-semibold">Right-click to open</p>
-              <p class="mt-1 text-sm text-[rgb(var(--color-text-muted))]">
-                Right-click (or Control-click) Geode.app → Open → Open again in the confirmation dialog. Also
-                available under System Settings → Privacy & Security → Open Anyway.
-              </p>
+        <h3>Opening an unsigned build</h3>
+        <p class="geode-install-intro">Pick either option. Both only need to be done once per downloaded copy.</p>
+        <ol class="geode-install-list">
+          <li>
+            <span class="geode-step-marker is-secondary">A</span>
+            <div>
+              <strong>Right-click to open</strong>
+              <p>Right-click or Control-click Geode.app → Open → Open again. You can also use System Settings → Privacy &amp; Security → Open Anyway.</p>
             </div>
           </li>
-          <li class="flex gap-4">
-            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[rgb(var(--color-border))] text-sm font-bold text-[rgb(var(--color-text))]">
-              B
-            </span>
-            <div class="w-full">
-              <p class="font-semibold">Clear the quarantine flag</p>
-              <p class="mt-1 text-sm text-[rgb(var(--color-text-muted))]">
-                Run this once in Terminal, then launch normally:
-              </p>
-              <div class="mt-3">
-                <CodeBlock code="xattr -dr com.apple.quarantine /Applications/Geode.app" />
-              </div>
+          <li>
+            <span class="geode-step-marker is-secondary">B</span>
+            <div>
+              <strong>Clear the quarantine flag</strong>
+              <p>Run this once in Terminal, then launch normally:</p>
+              <div class="geode-command"><CodeBlock code="xattr -dr com.apple.quarantine /Applications/Geode.app" /></div>
             </div>
           </li>
         </ol>

@@ -1,59 +1,28 @@
 ---
-import { Image } from 'astro:assets';
-import screenshotVaultEditor from '../assets/screenshots/screenshot-vault-editor.png';
+import GeodeWorkspacePreview from './GeodeWorkspacePreview.astro';
 
 const GITHUB_URL = 'https://github.com/rbcodelabs/geode';
 const VERSION = '0.13.0';
 ---
 
-<section class="relative overflow-hidden bg-dot-grid">
-  <div
-    class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[600px] bg-[radial-gradient(ellipse_at_top,_rgba(20,184,166,0.22),_transparent_60%)]"
-  >
+<section class="landing-hero" aria-labelledby="landing-title">
+  <div class="landing-eyebrow"><span class="landing-dot" aria-hidden="true"></span>Your notes. Plain Markdown. Fully yours.</div>
+  <h1 id="landing-title">A place for ideas<br />to stay <em>connected.</em></h1>
+  <p class="landing-lead">
+    Geode is an open-source, local-first Markdown knowledge base. Open any folder as a vault, write in plain files,
+    and follow the links between what you know.
+  </p>
+  <div class="landing-actions">
+    <a class="landing-btn" href="#install">Download for macOS <span aria-hidden="true">↓</span></a>
+    <a class="landing-btn landing-btn-secondary" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
   </div>
+  <p class="landing-hosts">Open source · MIT · v{VERSION} · iOS managed-vault MVP validated</p>
 
-  <div class="mx-auto max-w-6xl px-4 pb-16 pt-16 sm:px-6 sm:pb-24 sm:pt-24">
-    <div class="mx-auto max-w-3xl text-center">
-      <div class="mb-6 flex flex-wrap items-center justify-center gap-2">
-        <span class="rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] px-3 py-1 text-xs font-semibold text-[rgb(var(--color-text-muted))]">
-          Open Source · MIT
-        </span>
-        <span class="rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] px-3 py-1 text-xs font-semibold text-[rgb(var(--color-text-muted))]">
-          v{VERSION}
-        </span>
-        <span class="rounded-full border border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface))] px-3 py-1 text-xs font-semibold text-[rgb(var(--color-text-muted))]">
-          iOS managed-vault MVP validated
-        </span>
-      </div>
+  <GeodeWorkspacePreview />
 
-      <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-        A local-first <span class="text-gradient">Markdown knowledge base</span>, clean-room built
-      </h1>
-
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-[rgb(var(--color-text-muted))] sm:text-xl">
-        Geode is an open-source, local-first Markdown knowledge base — a clean-room clone of Obsidian. Your notes are
-        plain <code class="rounded bg-[rgb(var(--color-surface))] px-1.5 py-0.5 text-base">.md</code> files in a folder
-        on your disk. Links between notes are first-class. No account, no cloud, no lock-in.
-      </p>
-
-      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="#install" class="btn btn-primary w-full sm:w-auto">Download for macOS</a>
-        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" class="btn btn-secondary w-full sm:w-auto">
-          View on GitHub
-        </a>
-      </div>
-    </div>
-
-    <div class="mx-auto mt-14 max-w-4xl">
-      <div class="card overflow-hidden shadow-2xl shadow-black/40">
-        <Image
-          src={screenshotVaultEditor}
-          alt="Geode's vault open in the editor, showing Live Preview with wikilinks and the file tree"
-          width={1600}
-          class="w-full"
-          loading="eager"
-        />
-      </div>
-    </div>
+  <div class="landing-benefit-strip" aria-label="Product benefits">
+    <span>▤ Plain Markdown files</span>
+    <span>↗ First-class linked notes</span>
+    <span>⌕ Search across your vault</span>
   </div>
 </section>

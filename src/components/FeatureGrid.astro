@@ -20,7 +20,7 @@ const features = [
       'Callouts (13 types, foldable), embeds for notes/images/audio/video, highlights, tags, tables, task lists, and YAML properties.',
   },
   {
-    title: 'Knowledge graph plumbing',
+    title: 'Connected notes',
     description:
       'Backlinks pane, outline, tag pane, unresolved-link styling, and link resolution by shortest path and alias.',
   },
@@ -43,16 +43,17 @@ const features = [
 ];
 ---
 
-<section id="features" class="border-y border-[rgb(var(--color-border))] bg-[rgb(var(--color-surface-alt))]/40">
-  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Everything you need for a local-first vault</h2>
-      <p class="mt-4 text-[rgb(var(--color-text-muted))]">
+<section id="features" class="geode-features">
+  <div class="geode-section-inner">
+    <div class="geode-section-heading">
+      <div class="landing-eyebrow">The local-first foundation</div>
+      <h2>Everything you need for a connected vault.</h2>
+      <p>
         The core loop works today: vaults, editing, wikilinks, backlinks, search, tags, and reading view.
       </p>
     </div>
 
-    <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="geode-feature-grid">
       {features.map((feature) => <FeatureCard title={feature.title} description={feature.description} />)}
     </div>
   </div>

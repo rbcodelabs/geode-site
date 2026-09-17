@@ -7,7 +7,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div class="card p-6 transition-colors hover:border-[rgb(var(--color-primary))]">
-  <h3 class="text-base font-bold">{title}</h3>
-  <p class="mt-2 text-sm leading-relaxed text-[rgb(var(--color-text-muted))]">{description}</p>
-</div>
+<article class="geode-feature-card card">
+  <h3>{title}</h3>
+  <p>{description}</p>
+</article>
