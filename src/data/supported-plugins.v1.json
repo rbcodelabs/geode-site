@@ -50,6 +50,23 @@
       },
       "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/8619c3e542c91aa8ec81f7d2ddf65c81c984214e/tests/fixtures/plugins/terminal/README.md",
       "status": "active"
+    },
+    {
+      "id": "kanban-bases-view",
+      "name": "Kanban Bases View",
+      "description": "A kanban-style drag-and-drop custom view for Bases.",
+      "github": { "owner": "xiwcx", "repo": "obsidian-bases-kanban" },
+      "manifest": { "version": "0.10.4", "releaseTag": "0.10.4", "minAppVersion": "1.10.2" },
+      "platforms": ["desktop"],
+      "minimumGeodeVersion": "0.22.0",
+      "certifiedWithGeodeVersion": "0.22.0",
+      "artifactHashes": {
+        "main.js": "6f782a6e906c21e30afef1fddbcf01d031992094c841148dbcf6b3929c04b3ae",
+        "manifest.json": "6d9b1f421a38f312958e930ee848a29c7c9f9eb2b39c3c634bdaf0d2a3b1022b",
+        "styles.css": "fe444af65f188f5b8bbf6739364154be498a62fb393e394f0cb3eb23debe2299"
+      },
+      "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/e1d11db602ed16a5f32f105687c8320052bd45a8/test-vault/.geode/plugins/kanban-bases-view/README-geode.md",
+      "status": "active"
     }
   ]
 }
