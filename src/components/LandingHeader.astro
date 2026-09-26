@@ -1,3 +1,7 @@
+---
+import ProductSwitcher from './ProductSwitcher.astro';
+---
+
 <header class="landing-header">
   <a class="landing-brand" href="/" aria-label="Geode home">
     <span class="landing-logo" aria-hidden="true">
@@ -8,6 +12,7 @@
   <nav class="landing-nav" aria-label="Primary navigation">
     <a href="#features">Features</a>
     <a href="/docs/">Documentation <span aria-hidden="true">↗</span></a>
+    <ProductSwitcher />
     <a class="landing-btn landing-btn-secondary" href="#install">Download for macOS</a>
   </nav>
 </header>

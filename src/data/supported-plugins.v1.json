@@ -2,6 +2,56 @@
   "schemaVersion": 1,
   "plugins": [
     {
+      "id": "claude-threads",
+      "name": "Agent Threads",
+      "description": "Multi-agent Claude Code and OpenAI Codex sessions. Desktop integration tested with Geode 0.23.0; live agent sessions require provider setup.",
+      "github": { "owner": "rbcodelabs", "repo": "agent-threads" },
+      "manifest": { "version": "0.44.0", "releaseTag": "v0.44.0", "minAppVersion": "1.0.0" },
+      "platforms": ["desktop"],
+      "minimumGeodeVersion": "0.23.0",
+      "certifiedWithGeodeVersion": "0.23.0",
+      "artifactHashes": {
+        "main.js": "183227d0ffad0539bf1008684d28250d01d47f0c8ff87cdf4040ab830f14c8ff",
+        "manifest.json": "bb3b53b174b0033fd640a098939e804d1f3425bb1ec9f2cdd761eca16d0a10ae",
+        "styles.css": "3c657949adf95a1bb73bc93e067129b0ebf974c7fd70912598b877e3b33f50ca"
+      },
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/e6836e40232634138005d8c896e829489a55466e/docs/compatibility/core-plugins-2026-09-24.md",
+      "status": "active"
+    },
+    {
+      "id": "threads-design",
+      "name": "Design for Agent Threads",
+      "description": "Create static UI artifacts with secure previews and screenshot capture. Install and enable Agent Threads 0.44.0 first; dependencies are not installed automatically.",
+      "github": { "owner": "rbcodelabs", "repo": "threads-design" },
+      "manifest": { "version": "0.2.0", "releaseTag": "v0.2.0", "minAppVersion": "1.7.2" },
+      "platforms": ["desktop"],
+      "minimumGeodeVersion": "0.23.0",
+      "certifiedWithGeodeVersion": "0.23.0",
+      "artifactHashes": {
+        "main.js": "4318cd10a16c7207986eb08c6292b9a62c38319dcbeb718750d275de03e025a7",
+        "manifest.json": "5ba4c0cefd13b09d95ea29ff705523cc23aaaddfd9fa49099e6206d1917bcd12"
+      },
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/e6836e40232634138005d8c896e829489a55466e/docs/compatibility/core-plugins-2026-09-24.md",
+      "status": "active"
+    },
+    {
+      "id": "threads-orchestrator",
+      "name": "Threads Orchestrator",
+      "description": "Voice-first agent and document coordination. Install and enable Agent Threads 0.44.0 first. Panel and peer API tested; live voice and wake-word recognition are not certified by this check.",
+      "github": { "owner": "rbcodelabs", "repo": "threads-orchestrator" },
+      "manifest": { "version": "0.2.0", "releaseTag": "v0.2.0", "minAppVersion": "1.10.2" },
+      "platforms": ["desktop"],
+      "minimumGeodeVersion": "0.23.0",
+      "certifiedWithGeodeVersion": "0.23.0",
+      "artifactHashes": {
+        "main.js": "e7a99e1068392460c20274bb18d9eea141fd9368601e2d06ec0fd65243ed3719",
+        "manifest.json": "4e74591b933f8a8727cfb8cb50b85d884506172cd5da28e7eac6b59b6e97f8fd",
+        "styles.css": "42e4fbd2fbd3b9ce0a1b5614564cb2784b6e77bca7fd72348438f117ee793ac8"
+      },
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/e6836e40232634138005d8c896e829489a55466e/docs/compatibility/core-plugins-2026-09-24.md",
+      "status": "active"
+    },
+    {
       "id": "calendar",
       "name": "Calendar",
       "description": "Calendar view of your daily notes.",

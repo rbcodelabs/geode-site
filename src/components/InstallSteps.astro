@@ -14,11 +14,14 @@ const installSteps = [
     description: 'Open the dmg and drag Geode.app into your Applications folder.',
   },
   {
-    title: 'Bypass Gatekeeper on first launch',
+    title: 'Launch it',
     description:
-      'These builds are ad-hoc signed but not notarized, so macOS shows an "unidentified developer" warning the first time you open a downloaded copy.',
+      'Every release is Developer ID signed, notarized, and stapled by Apple before it ships, so Geode opens normally the first time — no security prompt to click through.',
   },
 ];
+
+const UPDATE_SCRIPT_URL = 'https://raw.githubusercontent.com/rbcodelabs/geode/main/scripts/geode-update.mts';
+const UPDATE_COMMAND = `curl -fsSL ${UPDATE_SCRIPT_URL} -o /tmp/geode-update.mts && node /tmp/geode-update.mts`;
 ---
 
 <section id="install" class="geode-install" aria-labelledby="install-title">
@@ -60,23 +63,19 @@ const installSteps = [
 
     <aside class="geode-gatekeeper" aria-labelledby="gatekeeper-title">
       <div class="geode-gatekeeper-copy">
-        <div class="geode-install-label">First launch</div>
-        <h3 id="gatekeeper-title">macOS may ask you to confirm.</h3>
+        <div class="geode-install-label">Prefer one command?</div>
+        <h3 id="gatekeeper-title">Install or update from the Terminal.</h3>
         <p>
-          Builds are ad-hoc signed and not notarized, so macOS shows an “unidentified developer” warning the first
-          time you open each downloaded copy. Choose either option once.
+          This script verifies the release's Developer ID signature, stable Apple Team ID, hardened runtime, and
+          stapled notarization ticket before installing — no dmg, no security prompt to click through.
         </p>
       </div>
       <div class="geode-open-options">
         <div>
-          <span class="geode-option-marker">A</span>
-          <p><strong>Right-click to open</strong>Right-click or Control-click Geode.app → Open → Open again. You can also use System Settings → Privacy &amp; Security → Open Anyway.</p>
-        </div>
-        <div>
-          <span class="geode-option-marker">B</span>
+          <span class="geode-option-marker">→</span>
           <div>
-            <p><strong>Clear the quarantine flag</strong>Run this once in Terminal, then launch normally:</p>
-            <div class="geode-command"><CodeBlock code="xattr -dr com.apple.quarantine /Applications/Geode.app" /></div>
+            <p><strong>Run it straight from GitHub</strong>No clone, no account, no auth needed:</p>
+            <div class="geode-command"><CodeBlock code={UPDATE_COMMAND} /></div>
           </div>
         </div>
       </div>
