@@ -156,6 +156,7 @@ test('publishes one canonical schema-v1 registry source', async () => {
   assert.deepEqual(registry.plugins.map(({ id }) => id), [
     'claude-threads', 'threads-design', 'threads-orchestrator',
     'calendar', 'obsidian-minimal-settings', 'terminal',
+    'kanban-bases-view',
   ]);
 });
 
