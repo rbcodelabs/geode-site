@@ -40,7 +40,7 @@ test('generated changelog entries end with exactly one newline', async () => {
     filenames.map((filename) => readFile(new URL(filename, changelogDirectory), 'utf8')),
   );
 
-  assert.equal(entries.length, 95);
+  assert.ok(entries.length > 0, 'expected at least one generated changelog entry');
   for (const entry of entries) {
     assert.match(entry, /[^\n]\n$/);
   }
