@@ -1,6 +1,8 @@
 ---
 import ProductSwitcher from './ProductSwitcher.astro';
 
+const ROADMAP_URL = 'https://compass.rbcodelabs.com/portal/rbcodelabs/geode/roadmap';
+const FEEDBACK_URL = 'https://compass.rbcodelabs.com/portal/rbcodelabs/geode/feedback';
 const GITHUB_URL = 'https://github.com/rbcodelabs/geode';
 ---
 
@@ -18,6 +20,8 @@ const GITHUB_URL = 'https://github.com/rbcodelabs/geode';
       <a href="/docs/">Documentation</a>
       <a href="/plugins/">Plugins</a>
       <a href="/changelog/">Changelog</a>
+      <a href={ROADMAP_URL} target="_blank" rel="noopener noreferrer">Roadmap</a>
+      <a href={FEEDBACK_URL} target="_blank" rel="noopener noreferrer">Feedback</a>
     </div>
 
     <div class="site-nav-actions">

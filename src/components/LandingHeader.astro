@@ -1,5 +1,8 @@
 ---
 import ProductSwitcher from './ProductSwitcher.astro';
+
+const ROADMAP_URL = 'https://compass.rbcodelabs.com/portal/rbcodelabs/geode/roadmap';
+const FEEDBACK_URL = 'https://compass.rbcodelabs.com/portal/rbcodelabs/geode/feedback';
 ---
 
 <header class="landing-header">
@@ -12,6 +15,7 @@ import ProductSwitcher from './ProductSwitcher.astro';
   <nav class="landing-nav" aria-label="Primary navigation">
     <a href="#features">Features</a>
     <a href="/docs/">Documentation <span aria-hidden="true">↗</span></a>
+    <a href={ROADMAP_URL} target="_blank" rel="noopener noreferrer">Roadmap <span aria-hidden="true">↗</span></a>
     <ProductSwitcher />
     <a class="landing-btn landing-btn-secondary" href="#install">Download for macOS</a>
   </nav>
