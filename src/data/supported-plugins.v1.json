@@ -4,51 +4,51 @@
     {
       "id": "claude-threads",
       "name": "Agent Threads",
-      "description": "Multi-agent Claude Code and OpenAI Codex sessions. Desktop integration tested with Geode 0.23.0; live agent sessions require provider setup.",
+      "description": "Multi-agent Claude Code and OpenAI Codex sessions. Desktop integration tested with Geode 0.30.0; live agent sessions require provider setup.",
       "github": { "owner": "rbcodelabs", "repo": "agent-threads" },
-      "manifest": { "version": "0.44.0", "releaseTag": "v0.44.0", "minAppVersion": "1.0.0" },
+      "manifest": { "version": "0.62.1", "releaseTag": "v0.62.1", "minAppVersion": "1.0.0" },
       "platforms": ["desktop"],
-      "minimumGeodeVersion": "0.23.0",
-      "certifiedWithGeodeVersion": "0.23.0",
+      "minimumGeodeVersion": "0.30.0",
+      "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
-        "main.js": "183227d0ffad0539bf1008684d28250d01d47f0c8ff87cdf4040ab830f14c8ff",
-        "manifest.json": "bb3b53b174b0033fd640a098939e804d1f3425bb1ec9f2cdd761eca16d0a10ae",
-        "styles.css": "3c657949adf95a1bb73bc93e067129b0ebf974c7fd70912598b877e3b33f50ca"
+        "main.js": "05e26d0843125f05974687f79eab75200713faa2c04f990d567bea4242c1f48e",
+        "manifest.json": "e804feade10d81e2fb64eadc737d820018345dfc405eb8a0074a8e0457254ea0",
+        "styles.css": "853ac08cd381176e88e456298940820e01cf237a86e8d797f0fbde515ad973c6"
       },
-      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/e6836e40232634138005d8c896e829489a55466e/docs/compatibility/core-plugins-2026-09-24.md",
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
       "status": "active"
     },
     {
       "id": "threads-design",
       "name": "Design for Agent Threads",
-      "description": "Create static UI artifacts with secure previews and screenshot capture. Install and enable Agent Threads 0.44.0 first; dependencies are not installed automatically.",
+      "description": "Create static UI artifacts with secure previews and screenshot capture. Install and enable Agent Threads 0.62.1 first; dependencies are not installed automatically.",
       "github": { "owner": "rbcodelabs", "repo": "threads-design" },
-      "manifest": { "version": "0.2.0", "releaseTag": "v0.2.0", "minAppVersion": "1.7.2" },
+      "manifest": { "version": "0.5.0", "releaseTag": "v0.5.0", "minAppVersion": "1.7.2" },
       "platforms": ["desktop"],
-      "minimumGeodeVersion": "0.23.0",
-      "certifiedWithGeodeVersion": "0.23.0",
+      "minimumGeodeVersion": "0.30.0",
+      "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
-        "main.js": "4318cd10a16c7207986eb08c6292b9a62c38319dcbeb718750d275de03e025a7",
-        "manifest.json": "5ba4c0cefd13b09d95ea29ff705523cc23aaaddfd9fa49099e6206d1917bcd12"
+        "main.js": "f173f899fd91f15d577725f4b019ca85393e2c4c7991f377c7dddda0682328d8",
+        "manifest.json": "4c3def757459cc9aa1e2a8fe76b5b4b876cc98db7b6848e8aed8cf263567bb6f"
       },
-      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/e6836e40232634138005d8c896e829489a55466e/docs/compatibility/core-plugins-2026-09-24.md",
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
       "status": "active"
     },
     {
       "id": "threads-orchestrator",
       "name": "Threads Orchestrator",
-      "description": "Voice-first agent and document coordination. Install and enable Agent Threads 0.44.0 first. Panel and peer API tested; live voice and wake-word recognition are not certified by this check.",
+      "description": "Voice-first agent and document coordination. Install and enable Agent Threads 0.62.1 first. Panel and peer API tested; live voice and wake-word recognition are not certified by this check.",
       "github": { "owner": "rbcodelabs", "repo": "threads-orchestrator" },
       "manifest": { "version": "0.2.0", "releaseTag": "v0.2.0", "minAppVersion": "1.10.2" },
       "platforms": ["desktop"],
-      "minimumGeodeVersion": "0.23.0",
-      "certifiedWithGeodeVersion": "0.23.0",
+      "minimumGeodeVersion": "0.30.0",
+      "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
         "main.js": "e7a99e1068392460c20274bb18d9eea141fd9368601e2d06ec0fd65243ed3719",
         "manifest.json": "4e74591b933f8a8727cfb8cb50b85d884506172cd5da28e7eac6b59b6e97f8fd",
         "styles.css": "42e4fbd2fbd3b9ce0a1b5614564cb2784b6e77bca7fd72348438f117ee793ac8"
       },
-      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/e6836e40232634138005d8c896e829489a55466e/docs/compatibility/core-plugins-2026-09-24.md",
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
       "status": "active"
     },
     {
@@ -58,13 +58,13 @@
       "github": { "owner": "liamcain", "repo": "obsidian-calendar-plugin" },
       "manifest": { "version": "1.5.10", "releaseTag": "1.5.10", "minAppVersion": "0.9.11" },
       "platforms": ["desktop"],
-      "minimumGeodeVersion": "0.2.19",
-      "certifiedWithGeodeVersion": "0.2.19",
+      "minimumGeodeVersion": "0.30.0",
+      "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
         "main.js": "7fb339e9cf9fdbe5a801fa2b8ab85b366b5b3777fbd193cbc8728bc27711d125",
         "manifest.json": "f3e9581338648512baa12d5b458490f7fd367918f7bdb6bd86171ce57be7d08b"
       },
-      "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/98526c2940d9c691497f9c810457311e48d27c3f/tests/fixtures/plugins/calendar/README.md",
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
       "status": "active"
     },
     {
@@ -74,14 +74,14 @@
       "github": { "owner": "kepano", "repo": "obsidian-minimal-settings" },
       "manifest": { "version": "9.0.0", "releaseTag": "9.0.0", "minAppVersion": "1.13.0" },
       "platforms": ["desktop"],
-      "minimumGeodeVersion": "0.12.4",
-      "certifiedWithGeodeVersion": "0.12.4",
+      "minimumGeodeVersion": "0.30.0",
+      "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
         "main.js": "f754e0ce6523e433bff8e7995a848f7d7fac205399f9ab3b1258430261fd90c4",
         "manifest.json": "2038f9c1f5ca026ebc1f3e156bad97c671d2c401a20718384508ef72071e8c5f",
         "styles.css": "50084760da927a5bf5ac1b9d3b960dc52e1d0a3bf690e54df8f4d76f8212628c"
       },
-      "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/4a1305f6659d3662e9bea5a21ab2cf44d14cf42b/tests/fixtures/plugins/minimal-settings-compat/README.md",
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
       "status": "active"
     },
     {
@@ -89,16 +89,16 @@
       "name": "Terminal",
       "description": "Integrate consoles, shells, and terminals.",
       "github": { "owner": "polyipseity", "repo": "obsidian-terminal" },
-      "manifest": { "version": "3.27.2", "releaseTag": "3.27.2", "minAppVersion": "1.4.11" },
+      "manifest": { "version": "3.28.0", "releaseTag": "3.28.0", "minAppVersion": "1.4.11" },
       "platforms": ["desktop"],
-      "minimumGeodeVersion": "0.20.0",
-      "certifiedWithGeodeVersion": "0.20.0",
+      "minimumGeodeVersion": "0.30.0",
+      "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
-        "main.js": "227e5cd8915ca9649007dfc089299b231eafebf06142bd1c715a0d7ae22bb467",
-        "manifest.json": "213714012652ff27e0fb0a798cd9549752d3d02d41eee6459f88790131d896d2",
+        "main.js": "60a01a191fd9eafb7af775a7e8c4cc63c54d882344876707ba59d9b5b6dceae1",
+        "manifest.json": "01aae391be0037b4b978967b6ccdccc11de59628771c3b594878bf7480415a4c",
         "styles.css": "39ab74656d85ed316e92d94b891eb9800a6244bb2a4375916065e51703f572bb"
       },
-      "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/8619c3e542c91aa8ec81f7d2ddf65c81c984214e/tests/fixtures/plugins/terminal/README.md",
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
       "status": "active"
     },
     {
@@ -106,16 +106,16 @@
       "name": "Kanban Bases View",
       "description": "A kanban-style drag-and-drop custom view for Bases.",
       "github": { "owner": "xiwcx", "repo": "obsidian-bases-kanban" },
-      "manifest": { "version": "0.10.4", "releaseTag": "0.10.4", "minAppVersion": "1.10.2" },
+      "manifest": { "version": "0.10.6", "releaseTag": "0.10.6", "minAppVersion": "1.10.2" },
       "platforms": ["desktop"],
-      "minimumGeodeVersion": "0.22.0",
-      "certifiedWithGeodeVersion": "0.22.0",
+      "minimumGeodeVersion": "0.30.0",
+      "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
-        "main.js": "6f782a6e906c21e30afef1fddbcf01d031992094c841148dbcf6b3929c04b3ae",
-        "manifest.json": "6d9b1f421a38f312958e930ee848a29c7c9f9eb2b39c3c634bdaf0d2a3b1022b",
+        "main.js": "154cec90036c1f582c7b1ad270c5ee56466909259dd31bb9e60b91f139c597e3",
+        "manifest.json": "fe6222590b00dd6da8ebc6338111147c004bcf865757b5084bda6d2396ed3e19",
         "styles.css": "fe444af65f188f5b8bbf6739364154be498a62fb393e394f0cb3eb23debe2299"
       },
-      "evidenceUrl": "https://github.com/rbcodelabs/geode/blob/e1d11db602ed16a5f32f105687c8320052bd45a8/test-vault/.geode/plugins/kanban-bases-view/README-geode.md",
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
       "status": "active"
     }
   ]
