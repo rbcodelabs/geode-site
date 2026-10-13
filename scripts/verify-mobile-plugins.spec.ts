@@ -1,3 +1,4 @@
+// @ts-nocheck -- runs inside the Geode checkout (Playwright), not in this Astro project.
 import { createHash } from "node:crypto";
 import * as fs from "node:fs";
 import * as path from "node:path";
