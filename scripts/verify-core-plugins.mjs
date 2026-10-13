@@ -13,6 +13,8 @@ for (const key of ['PLAYWRIGHT_PACKAGE', 'PLUGIN_ARTIFACTS', 'GEODE_EXECUTABLE']
 }
 const { _electron: electron } = createRequire(process.env.PLAYWRIGHT_PACKAGE)('@playwright/test');
 const ids = ['claude-threads', 'threads-design', 'threads-orchestrator'];
+// Exact release versions under certification, in `ids` order. Bump with each re-certification.
+const EXPECTED_VERSIONS = ['0.62.1', '0.5.0', '0.2.0'];
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'geode-core-cert-'));
 const vault = path.join(temp, 'vault');
 const profile = path.join(temp, 'profile');
@@ -95,7 +97,7 @@ try {
   assert.equal(capture.status, 'ok', JSON.stringify(capture));
   assert.notEqual(result.missingArtifact.status, 'ok');
   assert.equal(result.peerFindsThread, true);
-  assert.deepEqual(result.versions, ['0.44.0', '0.2.0', '0.2.0']);
+  assert.deepEqual(result.versions, EXPECTED_VERSIONS);
   console.log('PASS: Threads creation/open, Design artifact creation/preview, Orchestrator panel', result);
   await page.evaluate(async () => {
     await window.app.pluginManager.reload('claude-threads');
