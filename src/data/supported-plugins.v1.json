@@ -57,14 +57,14 @@
       "description": "Calendar view of your daily notes.",
       "github": { "owner": "liamcain", "repo": "obsidian-calendar-plugin" },
       "manifest": { "version": "1.5.10", "releaseTag": "1.5.10", "minAppVersion": "0.9.11" },
-      "platforms": ["desktop"],
+      "platforms": ["desktop", "mobile"],
       "minimumGeodeVersion": "0.30.0",
       "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
         "main.js": "7fb339e9cf9fdbe5a801fa2b8ab85b366b5b3777fbd193cbc8728bc27711d125",
         "manifest.json": "f3e9581338648512baa12d5b458490f7fd367918f7bdb6bd86171ce57be7d08b"
       },
-      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/4fa30efd4cbebb7fed3056edb3c45ce44b64fa57/docs/compatibility/plugin-catalog-mobile-2026-10-13.md",
       "status": "active"
     },
     {
@@ -107,7 +107,7 @@
       "description": "A kanban-style drag-and-drop custom view for Bases.",
       "github": { "owner": "xiwcx", "repo": "obsidian-bases-kanban" },
       "manifest": { "version": "0.10.6", "releaseTag": "0.10.6", "minAppVersion": "1.10.2" },
-      "platforms": ["desktop"],
+      "platforms": ["desktop", "mobile"],
       "minimumGeodeVersion": "0.30.0",
       "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
@@ -115,7 +115,7 @@
         "manifest.json": "fe6222590b00dd6da8ebc6338111147c004bcf865757b5084bda6d2396ed3e19",
         "styles.css": "fe444af65f188f5b8bbf6739364154be498a62fb393e394f0cb3eb23debe2299"
       },
-      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
+      "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/4fa30efd4cbebb7fed3056edb3c45ce44b64fa57/docs/compatibility/plugin-catalog-mobile-2026-10-13.md",
       "status": "active"
     }
   ]
