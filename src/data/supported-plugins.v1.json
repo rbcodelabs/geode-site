@@ -7,7 +7,7 @@
       "description": "Multi-agent Claude Code and OpenAI Codex sessions. Desktop integration tested with Geode 0.30.0; live agent sessions require provider setup.",
       "github": { "owner": "rbcodelabs", "repo": "agent-threads" },
       "manifest": { "version": "0.62.1", "releaseTag": "v0.62.1", "minAppVersion": "1.0.0" },
-      "platforms": ["desktop"],
+      "platforms": ["desktop", "mobile"],
       "minimumGeodeVersion": "0.30.0",
       "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
