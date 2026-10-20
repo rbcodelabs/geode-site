@@ -6,14 +6,14 @@
       "name": "Agent Threads",
       "description": "Multi-agent Claude Code and OpenAI Codex sessions. Desktop integration tested with Geode 0.30.0; live agent sessions require provider setup.",
       "github": { "owner": "rbcodelabs", "repo": "agent-threads" },
-      "manifest": { "version": "0.62.1", "releaseTag": "v0.62.1", "minAppVersion": "1.0.0" },
+      "manifest": { "version": "0.70.1", "releaseTag": "v0.70.1", "minAppVersion": "1.0.0" },
       "platforms": ["desktop", "mobile"],
       "minimumGeodeVersion": "0.30.0",
       "certifiedWithGeodeVersion": "0.30.0",
       "artifactHashes": {
-        "main.js": "05e26d0843125f05974687f79eab75200713faa2c04f990d567bea4242c1f48e",
-        "manifest.json": "e804feade10d81e2fb64eadc737d820018345dfc405eb8a0074a8e0457254ea0",
-        "styles.css": "853ac08cd381176e88e456298940820e01cf237a86e8d797f0fbde515ad973c6"
+        "main.js": "9aefd886397233c3329daeeead40e2d1f45646653b82ba78cea1fc5ddfaf7bdc",
+        "manifest.json": "1c4cb8c7ae498708098267eec04f6b9012a65314bf3b830535c455f3eef76902",
+        "styles.css": "8198a83bfdd731e46889e636c387e77a7a3a2912a4874ea7b36ff1dbfab27fea"
       },
       "evidenceUrl": "https://github.com/rbcodelabs/geode-site/blob/47bca79eb3d58dfd36b41d6b739ba909dcc13ff0/docs/compatibility/plugin-catalog-2026-10-13.md",
       "status": "active"
@@ -21,7 +21,7 @@
     {
       "id": "threads-design",
       "name": "Design for Agent Threads",
-      "description": "Create static UI artifacts with secure previews and screenshot capture. Install and enable Agent Threads 0.62.1 first; dependencies are not installed automatically.",
+      "description": "Create static UI artifacts with secure previews and screenshot capture. Install and enable Agent Threads 0.70.1 first; dependencies are not installed automatically.",
       "github": { "owner": "rbcodelabs", "repo": "threads-design" },
       "manifest": { "version": "0.5.0", "releaseTag": "v0.5.0", "minAppVersion": "1.7.2" },
       "platforms": ["desktop"],
@@ -37,7 +37,7 @@
     {
       "id": "threads-orchestrator",
       "name": "Threads Orchestrator",
-      "description": "Voice-first agent and document coordination. Install and enable Agent Threads 0.62.1 first. Panel and peer API tested; live voice and wake-word recognition are not certified by this check.",
+      "description": "Voice-first agent and document coordination. Install and enable Agent Threads 0.70.1 first. Panel and peer API tested; live voice and wake-word recognition are not certified by this check.",
       "github": { "owner": "rbcodelabs", "repo": "threads-orchestrator" },
       "manifest": { "version": "0.2.0", "releaseTag": "v0.2.0", "minAppVersion": "1.10.2" },
       "platforms": ["desktop"],
